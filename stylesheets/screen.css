@@ -66,3 +66,9 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
+
+/* line 27, ../sass/partials/_pie.scss */
+.pie-element {
+  behavior: url("/styles/PIE.htc");
+  position: relative;
+}
