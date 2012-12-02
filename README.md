@@ -8,6 +8,5 @@
 ## Todo
 
 - implement MongoDB
-- implement Compass
 - implement Coffeescript
 - implement Mocha
