@@ -22,6 +22,9 @@ app.configure(function(){
   app.use(express.session());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+  app.use( function(err, req, res, next) {
+    res.render('500.ejs', { locals: { error: err }, status: 500 });
+  });
 });
 
 app.configure('development', function(){

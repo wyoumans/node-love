@@ -1,10 +1,17 @@
+var locals = {
+  title: 'Home'
+};
+
 
 /*
  * GET home page.
  */
 
 exports.index = function(req, res){
-  res.render('home', { title: 'Home' });
+
+  locals.title = 'Home';
+
+  res.render('home', locals);
 };
 
 /*
@@ -12,5 +19,8 @@ exports.index = function(req, res){
  */
 
 exports.error404 = function(req, res){
-  res.render('generic', { title: '404' });
+
+  locals.title = '404';
+
+  res.render('generic', locals);
 };
