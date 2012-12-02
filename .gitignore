@@ -1,0 +1,32 @@
+#mac ignores
+:2e*
+._*
+*~
+.AppleDouble*
+.DS_*
+-.save
+.com.apple.timemachine*
+
+#SVN ignores
+*.svn
+
+#Compass
+.rvmrc
+.sass-cache/*
+
+#Node ignores
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+pids
+logs
+results
+npm-debug.log
+
+#other
+/node_modules
