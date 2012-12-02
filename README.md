@@ -1,4 +1,4 @@
-#  Boilerplate Node.js, Express, EJS, Compass, MongoDB app
+#  Boilerplate Node.js, Express, Coffee, EJS, Compass, MongoDB app
 
 ## Getting Started
 
@@ -9,4 +9,4 @@
 
 - implement MongoDB
 - implement Compass
-- implement better routing
+- implement Coffeescript
