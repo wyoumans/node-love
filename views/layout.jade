@@ -18,6 +18,7 @@ html
 
     link(rel='stylesheet', media='screen, projection', href='/stylesheets/screen.css', type='text/css')
     link(rel='stylesheet', media='print', href='/stylesheets/print.css', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Abel', rel='stylesheet', type='text/css')
 
     //if IE
       link(href='stylesheets/ie.css', media='screen, projection', rel='/stylesheet', type='text/css')
@@ -31,15 +32,12 @@ html
   body
     .container
       nav.sixteen.columns.alpha
-        ul.ten.columns.alpha
+        .logo.nine.columns
+          a(href='/')= site_name
+        ul.four.columns.pull-right.text-right
           li
-            = site_name
-        ul.six.columns.omega
-          li.two.columns.alpha
-            a(href='/') Home
-          li.two.columns
             a(href='/about') About
-          li.two.columns.omega
+          li
             a(href='/contact') Contact
 
       block content

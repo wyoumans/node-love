@@ -1,7 +1,33 @@
 body {
-  font-family: 'Helvetica Neue', Hl;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Abel', Helvetica, Arial, sans-serif;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
 }
 
 .container {
   margin-top: 40px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
 }
