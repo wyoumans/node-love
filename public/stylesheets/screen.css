@@ -332,7 +332,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Abel', Helvetica, Arial, sans-serif; }
 
 .container { margin-top: 40px; }
 
-nav ul li { display: inline-block; margin: 0 10px; }
+nav ul li { display: inline-block; margin: 0 0 0 20px; }
 
 /* Smaller than standard 960 (devices and browsers) */
 /* Tablet Portrait size to standard 960 (devices and browsers) */

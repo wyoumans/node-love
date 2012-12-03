@@ -31,16 +31,17 @@ html
 
   body
     .container
-      nav.sixteen.columns.alpha
+      .row
         .logo.nine.columns
           a(href='/')= site_name
-        ul.four.columns.pull-right.text-right
-          li
-            a(href='/about') About
-          li
-            a(href='/contact') Contact
+        nav
+          ul.four.columns.pull-right.text-right.omega
+            li
+              a(href='/about') About
+            li
+              a(href='/contact') Contact
 
       block content
 
-      .clear
-      footer 2012 Stuff and things
+      footer.row
+        p 2012 Copyright
