@@ -1,0 +1,16 @@
+!!! 5
+html
+  head
+    title= title
+    link(rel='stylesheet', media='screen, projection', href='/stylesheets/screen.css')
+    link(rel='stylesheet', media='print', href='/stylesheets/print.css')
+    //if IE
+      link(href='/stylesheets/ie.css', media='screen, projection', rel='stylesheet', type='text/css')
+  body
+    nav
+      ul
+        li home
+        li about
+        li contact
+
+    block content
