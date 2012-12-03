@@ -5,10 +5,9 @@
 
 @import "compass";
 
-@import "compass/reset";
+/* @import "compass/reset"; */
 
-@import "partials/fonts";
-@import "partials/base";
 @import "partials/pie";
+@import "partials/base";
+@import "partials/skeleton";
 @import "partials/layout";
-@import "partials/generic";

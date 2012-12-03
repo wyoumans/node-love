@@ -23,7 +23,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
   app.use( function(err, req, res, next) {
-    res.render('500.ejs', { locals: { error: err }, status: 500 });
+    res.render('500', { locals: { error: err }, status: 500 });
   });
 });
 
@@ -38,7 +38,6 @@ app.locals({
 app.get('/', site.index);
 app.get('/about', site.about);
 app.get('/contact', site.contact);
-app.get('/*', site.error404);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
