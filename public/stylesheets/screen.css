@@ -318,6 +318,8 @@ or wrap each row of columns in a <div class="row"> */
 /* You can also use a <br class="clear" /> to clear columns */
 .clear { clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
 
+body { font-family: 'Helvetica Neue', Hl; }
+
 .container { margin-top: 40px; }
 
 /* Smaller than standard 960 (devices and browsers) */
