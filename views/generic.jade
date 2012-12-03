@@ -2,13 +2,13 @@ extends layout
 
 block content
   .sixteen.columns
-    h1.remove-bottom(style='margin-top: 40px;')= title
-    h5 Version 1.2
-    hr
+    h1(style='margin-top: 40px;')= title
+
   .one-third.column
     h3 About Skeleton?
     p
       | Skeleton is a small collection of well-organized CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop screen or an iPhone. It's based on a responsive grid, but also provides very basic CSS for typography, buttons, forms and media queries. Go ahead, resize this super basic page to see the grid in action.
+
   .one-third.column
     h3 Three Core Principles
     p Skeleton is built on three core principles:
@@ -22,6 +22,7 @@ block content
       li
         strong Style Agnostic
         | : It provides the most basic, beautiful styles, but is meant to be overwritten.
+
   .one-third.column
     h3 Docs & Support
     p
