@@ -32,6 +32,8 @@ app.configure('development', function(){
 });
 
 app.get('/', site.index);
+app.get('/about', site.about);
+app.get('/contact', site.contact);
 app.get('/*', site.error404);
 
 http.createServer(app).listen(app.get('port'), function(){

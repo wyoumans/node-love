@@ -1,17 +1,10 @@
-var locals = {
-  title: 'Home'
-};
-
 
 /*
  * GET home page.
  */
 
 exports.index = function(req, res){
-
-  locals.title = 'Home';
-
-  res.render('home', locals);
+  res.render('generic', { title: 'Home'});
 };
 
 /*
@@ -19,8 +12,21 @@ exports.index = function(req, res){
  */
 
 exports.error404 = function(req, res){
+  res.render('generic', { title: '404'});
+};
 
-  locals.title = '404';
+/*
+ * GET about page.
+ */
 
-  res.render('generic', locals);
+exports.about = function(req, res){
+  res.render('generic', { title: 'About'});
+};
+
+/*
+ * GET contact page.
+ */
+
+exports.contact = function(req, res){
+  res.render('generic', { title: 'Contact'});
 };
