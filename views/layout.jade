@@ -14,16 +14,22 @@ html
     //if IE
       link(href='stylesheets/ie.css', media='screen, projection', rel='/stylesheet', type='text/css')
 
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js')
+    script(src='/javascripts/app.js')
+
+
     //if lt IE 9
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
   body
-    nav
-      ul
-        li
-          a(href='/') Home
-        li
-          a(href='/about') About
-        li
-          a(href='/contact') Contact
+    .container
+      nav
+        ul
+          li
+            a(href='/') Home
+          li
+            a(href='/about') About
+          li
+            a(href='/contact') Contact
 
-    block content
+      block content
