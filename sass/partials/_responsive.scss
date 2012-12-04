@@ -11,4 +11,11 @@
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
+@media only screen and (max-width: 479px) {
+  header {
+    text-align: center;
+    .text-right {
+      text-align: center;
+    }
+  }
+}
