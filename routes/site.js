@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('home', { title: 'Node.js, Express, Coffee, Jade, Compass, Skeleton, MongoDB, Mocha Boilerplate'});
+  res.render('home', { title: 'Node.js, Express, CoffeeScript, Jade, Compass, Skeleton, MongoDB, Mocha Boilerplate'});
 };
 
 /*

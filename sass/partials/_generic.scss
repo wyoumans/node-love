@@ -79,6 +79,7 @@ h6 {
   position: relative;
   background-color: #EEEEEE;
   height: 400px;
+  @include border-radius(15px);
 
   h1 {
     position: absolute;

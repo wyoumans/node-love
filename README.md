@@ -1,4 +1,15 @@
-#  Node.js, Express, Coffee, Jade, Compass, Skeleton, MongoDB, Mocha Boilerplate
+# Node Love
+
+A Node.js boilerplate including:
+- Node.js
+- Express
+- CoffeeScript
+- Jade
+- Compass
+- Skeleton
+- MongoDB
+- Mocha
+
 
 ## Getting Started
 

@@ -31,7 +31,7 @@ app.configure('development', function(){
 });
 
 app.locals({
-  site_name: "Node Boilerplate"
+  site_name: "Node Love"
 });
 
 app.get('/', site.index);
