@@ -22,6 +22,70 @@ db.open (err, db) ->
         populateDB()
 
 
+#
+# RESTful API for Pages
+#
+exports.findById = (req, res) ->
+  id = req.params.id
+  console.log "Retrieving page: " + id
+  db.collection "pages", (err, collection) ->
+    collection.findOne
+      _id: new BSON.ObjectID(id)
+    , (err, item) ->
+      res.send item
+
+exports.findAll = (req, res) ->
+  db.collection "pages", (err, collection) ->
+    collection.find().toArray (err, items) ->
+      res.send items
+
+exports.addPage = (req, res) ->
+  tea = req.body
+  console.log "Adding page: " + JSON.stringify(tea)
+  db.collection "pages", (err, collection) ->
+    collection.insert tea,
+      safe: true
+    , (err, result) ->
+      if err
+        res.send error: "An error has occurred"
+      else
+        console.log "Success: " + JSON.stringify(result[0])
+        res.send result[0]
+
+exports.updatePage = (req, res) ->
+  id = req.params.id
+  tea = req.body
+  delete tea._id
+
+  console.log "Updating page: " + id
+  console.log JSON.stringify(tea)
+  db.collection "pages", (err, collection) ->
+    collection.update
+      _id: new BSON.ObjectID(id)
+    , tea,
+      safe: true
+    , (err, result) ->
+      if err
+        console.log "Error updating page: " + err
+        res.send error: "An error has occurred"
+      else
+        console.log "" + result + " document(s) updated"
+        res.send tea
+
+exports.deletePage = (req, res) ->
+  id = req.params.id
+  console.log "Deleting page: " + id
+  db.collection "pages", (err, collection) ->
+    collection.remove
+      _id: new BSON.ObjectID(id)
+    ,
+      safe: true
+    , (err, result) ->
+      if err
+        res.send error: "An error has occurred - " + err
+      else
+        console.log "" + result + " document(s) deleted"
+        res.send req.body
 
 
 #
