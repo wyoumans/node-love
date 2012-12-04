@@ -1,4 +1,4 @@
-#  Node.js, Express, Coffee, EJS, Compass, MongoDB, Mocha Boilerplate
+#  Node.js, Express, Coffee, Jade, Compass, Skeleton, MongoDB, Mocha Boilerplate
 
 ## Getting Started
 
@@ -10,4 +10,3 @@
 - implement MongoDB
 - implement Coffeescript
 - implement Mocha
-- implement Compass/Sass without RubyGems

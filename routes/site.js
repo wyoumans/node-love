@@ -4,15 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('home', { title: 'Node.js, Express, Coffee, EJS, Compass, MongoDB, Mocha Boilerplate'});
-};
-
-/*
- * GET 404 page.
- */
-
-exports.error404 = function(req, res){
-  res.render('generic', { title: '404'});
+  res.render('home', { title: 'Node.js, Express, Coffee, Jade, Compass, Skeleton, MongoDB, Mocha Boilerplate'});
 };
 
 /*
