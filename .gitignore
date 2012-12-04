@@ -7,12 +7,10 @@
 -.save
 .com.apple.timemachine*
 
-#SVN ignores
-*.svn
-
 #Compass
 .rvmrc
 .sass-cache/*
+Gemfile*
 
 #Node ignores
 lib-cov
