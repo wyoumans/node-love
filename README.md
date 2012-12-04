@@ -14,12 +14,11 @@ A Node.js boilerplate including:
 ## Getting Started
 
 - `npm install`
-- `node app`
+- `node server`
 - To use compass, setup the compass rubygem (should probably use RVM) and run `compass watch`
 
 ## Todo
 
-- implement MongoDB
 - implement Coffeescript
 - implement Mocha
 

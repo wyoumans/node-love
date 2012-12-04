@@ -3,4 +3,4 @@
  */
 
 require('coffee-script');
-require('./server');
+require('./app');
