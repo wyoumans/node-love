@@ -1,4 +1,6 @@
 source "https://rubygems.org"
 
-gem "compass" # Compass
-gem "rb-fsevent" # For Compass watch
+group :development do
+  gem "compass" # Compass
+  gem "rb-fsevent" # For Compass watch
+end
