@@ -19,8 +19,9 @@ A Node.js boilerplate including:
 
 ## Todo
 
-- implement Coffeescript
-- implement Mocha
+- implement Coffeescript for front end assets
+- implement Mocha for testing
+- pull page content from MongoDB
 
 ## License
 
