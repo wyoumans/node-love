@@ -877,6 +877,7 @@ nav ul li { display: inline-block; margin: 0 0 0 20px; font-size: 14px; }
 
 header .logo { font-size: 40px; }
 header .logo i { font-size: 20px; margin: 0 15px 0 0; color: red; }
+header .logo .superscript { display: inline-block; color: #AAA; font-size: 20px; margin: -10px 0 0 5px; vertical-align: top; }
 header a { text-decoration: none; }
 
 h1 { font-size: 28px; line-height: 40px; margin-bottom: 10px; }

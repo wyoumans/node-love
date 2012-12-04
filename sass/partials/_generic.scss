@@ -32,11 +32,17 @@ nav ul li {
 header {
   .logo {
     font-size: 40px;
-
     i {
       font-size: 20px;
       margin: 0 15px 0 0;
       color: red;
+    }
+    .superscript {
+      display: inline-block;
+      color: #AAA;
+      font-size: 20px;
+      margin: -10px 0 0 5px;
+      vertical-align: top;
     }
   }
   a {
