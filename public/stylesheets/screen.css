@@ -875,8 +875,8 @@ h1, h2, h3, h4, h5, h6, .logo, .callout { font-family: "GandhiSansRegular", Helv
 
 nav ul li { display: inline-block; margin: 0 0 0 20px; font-size: 14px; }
 
-.logo { font-size: 40px; }
-
+header .logo { font-size: 40px; }
+header .logo i { font-size: 20px; margin: 0 15px 0 0; color: red; }
 header a { text-decoration: none; }
 
 h1 { font-size: 28px; line-height: 40px; margin-bottom: 10px; }
