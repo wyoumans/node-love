@@ -1,4 +1,4 @@
-#  Boilerplate Node.js, Express, Coffee, EJS, Compass, MongoDB, Mocha app
+#  Node.js, Express, Coffee, EJS, Compass, MongoDB, Mocha Boilerplate
 
 ## Getting Started
 

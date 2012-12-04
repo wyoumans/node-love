@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('generic', { title: 'Home'});
+  res.render('home', { title: 'Node.js, Express, Coffee, EJS, Compass, MongoDB, Mocha Boilerplate'});
 };
 
 /*

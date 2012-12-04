@@ -66,3 +66,16 @@ h6 {
   font-size: 180%;
   line-height: normal;
 }
+.hero {
+  position: relative;
+  background-color: #EEEEEE;
+  height: 400px;
+
+  h1 {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 200px;
+    color: #555555;
+  }
+}
