@@ -1,0 +1,45 @@
+@import "compass/css3/font-face";
+$font_path: "/fonts/" !default;
+
+@include font-face(
+  'FontAwesome',
+  font-files(
+    "#{$font_path}fontawesome-webfont.woff", woff,
+    "#{$font_path}fontawesome-webfont.ttf", truetype,
+    "#{$font_path}fontawesome-webfont.otf", opentype,
+    "#{$font_path}fontawesome-webfont.svgz#FontAwesomeRegular", svg,
+    "#{$font_path}fontawesome-webfont.svg#FontAwesomeRegular", svg),
+  '#{$font_path}fontawesome-webfont.eot',
+  normal,
+  normal
+);
+
+@include font-face(
+  "GandhiSansRegular", font-files(
+    "#{$font_path}GandhiSans-Regular-webfont.eot", opentype,
+    "#{$font_path}GandhiSans-Regular-webfont.woff", woff,
+    "#{$font_path}GandhiSans-Regular-webfont.ttf", truetype,
+    "#{$font_path}GandhiSans-Regular-webfont.svg#GandhiSansRegular", svg
+  )
+);
+
+@include font-face(
+  "GandhiSansItalic", font-files(
+    "#{$font_path}GandhiSans-Italic-webfont.eot", opentype,
+    "#{$font_path}GandhiSans-Italic-webfont.woff", woff,
+    "#{$font_path}GandhiSans-Italic-webfont.ttf", truetype,
+    "#{$font_path}GandhiSans-Italic-webfont.svg#GandhiSansItalic", svg
+  )
+);
+
+@include font-face(
+  "GandhiSansBold", font-files(
+    "#{$font_path}GandhiSans-Bold-webfont.eot", opentype,
+    "#{$font_path}GandhiSans-Bold-webfont.woff", woff,
+    "#{$font_path}GandhiSans-Bold-webfont.ttf", truetype,
+    "#{$font_path}GandhiSans-Bold-webfont.svg#GandhiSansBold", svg
+  )
+);
+
+$base-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-family: 'GandhiSansRegular', Helvetica, Arial, sans-serif;

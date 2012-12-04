@@ -1,9 +1,10 @@
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $base-family;
   font-weight: 300;
 }
 h1, h2, h3, h4, h5, h6, .logo , .callout{
-  font-family: 'Abel', Helvetica, Arial, sans-serif;
+  font-family: $header-family, Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
 .pull-right {
   float: right !important;
