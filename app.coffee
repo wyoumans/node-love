@@ -2,7 +2,7 @@ express = require("express")
 path = require("path")
 http = require("http")
 site = require("./routes/site")
-#page = require("./routes/pages")
+page = require("./routes/pages")
 
 app = express()
 
@@ -32,8 +32,8 @@ app.get "/", site.index
 app.get "/about", site.about
 app.get "/contact", site.contact
 
-#app.get "/pages", page.findAll
-#app.get "/pages/:id", page.findById
+app.get "/pages", page.findAll
+app.get "/pages/:id", page.findById
 #app.post "/pages", page.addPage
 #app.put "/pages/:id", page.updatePage
 #app.delete "/pages/:id", page.deletePage
