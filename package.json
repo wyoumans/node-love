@@ -1,6 +1,6 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
+  "name": "node-love",
+  "version": "0.1",
   "private": true,
   "scripts": {
     "start": "node app"
@@ -9,5 +9,9 @@
     "express": "3.0.3",
     "jade": "0.27.7",
     "coffee-script": "1.4.0"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.49"
   }
 }
