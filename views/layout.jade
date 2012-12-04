@@ -31,7 +31,7 @@ html
 
   body
     .container
-      .row
+      header.row
         .logo.nine.columns
           a(href='/')= site_name
         nav
@@ -43,5 +43,7 @@ html
 
       block content
 
-      footer.row
-        p 2012 Copyright
+      footer.row.sixteen.columns
+        p
+          &copy; 2012&nbsp;
+          a(href="http://www.williamyoumans.com", target="_blank") William Youmans
