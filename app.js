@@ -4,6 +4,7 @@
  */
 
 var express = require('express'),
+  coffee = require('coffee-script'),
   site = require('./routes/site'),
   http = require('http'),
   path = require('path');
