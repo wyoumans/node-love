@@ -13,9 +13,9 @@ A Node.js boilerplate including:
 
 ## Getting Started
 
-- `npm install`
+- `npm install` (ensure mongodb is installed and running)
 - `node server`
-- To use compass, setup the compass rubygem (should probably use RVM) and run `compass watch`
+- `compass watch` (ensure compass is installed and running)
 
 ## Todo
 
