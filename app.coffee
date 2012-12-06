@@ -22,7 +22,7 @@ app.configure ->
   app.use express.logger("dev")
   app.use express.bodyParser()
   app.use express.methodOverride()
-  app.use express.cookieParser "howday, cookie secret!"
+  app.use express.cookieParser "f6cfcf4dabfeb866731392f11da591fc"
   app.use express.session()
   app.use app.router
   app.use express.static(path.join(__dirname, "public"))
