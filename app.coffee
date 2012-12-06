@@ -1,8 +1,8 @@
-express = require("express")
-path = require("path")
-http = require("http")
-site = require("./routes/site")
-page = require("./routes/pages")
+express = require "express"
+path = require "path"
+http = require "http"
+site = require "./routes/site"
+page = require "./routes/pages"
 
 app = express()
 
@@ -13,7 +13,7 @@ app.configure ->
   app.use express.logger("dev")
   app.use express.bodyParser()
   app.use express.methodOverride()
-  app.use express.cookieParser("howday, cookie secret!")
+  app.use express.cookieParser "howday, cookie secret!"
   app.use express.session()
   app.use app.router
   app.use express.static(path.join(__dirname, "public"))
