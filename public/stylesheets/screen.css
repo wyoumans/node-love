@@ -857,7 +857,7 @@ ul.icons li .icon-large:before, ul.icons li .icon-large:before { /* 1.5 increase
 
 .icon-handicap-sign:before { content: "\f52f"; }
 
-body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300; }
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300; background: transparent url(/images/template/grid-18px-masked.png) repeat-x 0 0; border-top: 5px solid red; }
 
 h1, h2, h3, h4, h5, h6, .logo, .callout { font-family: "GandhiSansRegular", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif; font-weight: normal; }
 

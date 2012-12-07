@@ -1,6 +1,8 @@
 body {
   font-family: $base-family;
   font-weight: 300;
+  background: transparent image-url('/images/template/grid-18px-masked.png') repeat-x 0 0;
+  border-top: 5px solid red;
 }
 h1, h2, h3, h4, h5, h6, .logo , .callout{
   font-family: $header-family, Helvetica, Arial, sans-serif;
