@@ -45,6 +45,15 @@ exports.findAll = (req, res) ->
     collection.find().toArray (err, items) ->
       res.send items
 
+exports.findByUrl = (req, res) ->
+  id = req.params.id
+  console.log "Retrieving page: " + id
+  db.collection "pages", (err, collection) ->
+    collection.findOne
+      _id: new BSON.ObjectID(id)
+    , (err, item) ->
+      res.send item
+
 ###
   exports.addPage = (req, res) ->
     tea = req.body
