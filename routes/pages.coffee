@@ -31,6 +31,8 @@ db.open (err, db) ->
 #
 # RESTful API for Pages
 #
+
+# Find page by ID
 exports.findById = (req, res) ->
   id = req.params.id
   console.log "Retrieving page: " + id
@@ -38,21 +40,38 @@ exports.findById = (req, res) ->
     collection.findOne
       _id: new BSON.ObjectID(id)
     , (err, item) ->
-      res.send item
+      if err
+        res.send error: "A DB error has occurred"
+      if item
+        res.send item
+      else
+        res.send 404
 
+# Find page by URL
+exports.findByUrl = (req, res) ->
+  url = req.params.url
+  console.log "Retrieving page: " + url
+  db.collection "pages", (err, collection) ->
+    collection.findOne
+      slug: url
+    , (err, item) ->
+      if err
+        res.send error: "A DB error has occurred"
+      if item
+        res.send item
+      else
+        res.send 404
+
+# Find all pages
 exports.findAll = (req, res) ->
   db.collection "pages", (err, collection) ->
     collection.find().toArray (err, items) ->
-      res.send items
-
-exports.findByUrl = (req, res) ->
-  id = req.params.id
-  console.log "Retrieving page: " + id
-  db.collection "pages", (err, collection) ->
-    collection.findOne
-      _id: new BSON.ObjectID(id)
-    , (err, item) ->
-      res.send item
+      if err
+        res.send error: "A DB error has occurred"
+      if items
+        res.send items
+      else
+        res.send 404
 
 ###
   exports.addPage = (req, res) ->

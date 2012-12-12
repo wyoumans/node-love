@@ -55,6 +55,9 @@ app.get "/contact", site.contact
 #
 app.get "/pages", page.findAll
 app.get "/pages/:id", page.findById
+app.get "/pages/url/", page.findByUrl
+app.get "/pages/url/:url", page.findByUrl
+
 #app.post "/pages", page.addPage
 #app.put "/pages/:id", page.updatePage
 #app.delete "/pages/:id", page.deletePage
