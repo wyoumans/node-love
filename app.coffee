@@ -54,9 +54,7 @@ app.get "/contact", site.contact
 # Pages API routes
 #
 app.get "/pages", page.findAll
-app.get "/pages/:id", page.findById
-app.get "/pages/url/", page.findByUrl
-app.get "/pages/url/:url", page.findByUrl
+app.get "/pages/:id", page.findByAttribute
 
 #app.post "/pages", page.addPage
 #app.put "/pages/:id", page.updatePage

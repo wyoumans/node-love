@@ -32,31 +32,21 @@ db.open (err, db) ->
 # RESTful API for Pages
 #
 
-# Find page by ID
-exports.findById = (req, res) ->
+# Find page by ID/URL
+exports.findByAttribute = (req, res) ->
   id = req.params.id
+
+  # is this a URL or ID?
+  lookup = {}
+  try
+    lookup["_id"] = new BSON.ObjectID(id)
+  catch err
+    lookup["slug"] = id
+
   console.log "Retrieving page: " + id
   db.collection "pages", (err, collection) ->
-    collection.findOne
-      _id: new BSON.ObjectID(id)
-    , (err, item) ->
-      if err
-        res.send error: "A DB error has occurred"
-      if item
-        res.send item
-      else
-        res.send 404
-
-# Find page by URL
-exports.findByUrl = (req, res) ->
-  url = req.params.url
-  console.log "Retrieving page: " + url
-  db.collection "pages", (err, collection) ->
-    collection.findOne
-      slug: url
-    , (err, item) ->
-      if err
-        res.send error: "A DB error has occurred"
+    collection.findOne lookup, (err, item) ->
+      res.send error: "A DB error has occurred"  if err
       if item
         res.send item
       else
@@ -129,7 +119,7 @@ exports.findAll = (req, res) ->
 populateDB = ->
   pages = [
     title: "Node.js, Express, CoffeeScript, Jade, Compass, Skeleton, MongoDB, Mocha Boilerplate"
-    slug: "home"
+    slug: "index"
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis lacinia ultrices. Nam tempus enim a nibh iaculis a ultricies dolor pharetra. Duis ultricies auctor justo sit amet dignissim. Aliquam semper lacus in diam pretium id iaculis nisl facilisis. Donec sed mi in risus fringilla pulvinar. Ut adipiscing sagittis est, consectetur imperdiet massa eleifend ut. Praesent ac imperdiet enim. Quisque luctus massa non nibh elementum convallis. Quisque vitae augue nec libero blandit vehicula. Vestibulum luctus ante eu purus scelerisque tempor. Mauris euismod metus eu diam pellentesque molestie. Aliquam erat volutpat. Sed non libero ligula. Sed sapien metus, blandit nec vestibulum at, consectetur et est. Sed lacinia justo nulla. Etiam sem mi, malesuada vitae gravida in, adipiscing at urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales, mi a congue convallis, sapien orci feugiat quam, nec rutrum nunc felis sit amet orci. Aenean urna nunc, imperdiet non tincidunt eget, commodo id sem. Mauris tincidunt adipiscing metus, eget euismod neque semper quis. Donec ornare nulla vitae elit mollis a rutrum ipsum elementum. In at rhoncus erat. Sed bibendum aliquet justo quis aliquam. Aliquam vehicula, enim sed suscipit lobortis, est nunc elementum elit, ut cursus risus dolor egestas augue.",
     template: "home"
   ,
