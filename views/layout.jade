@@ -23,7 +23,7 @@ html
       link(href='stylesheets/ie.css', media='screen, projection', rel='/stylesheet', type='text/css')
 
     script(src='/javascripts/libs/jquery-1.8.3.min.js')
-    script(src='/javascripts/app.js')
+    script(src='/javascripts/custom/custom.js')
 
     //if lt IE 9
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
@@ -36,12 +36,12 @@ html
             i(class="icon-heart")
             = "node(love)"
             span.superscript beta
-        nav
+        nav.primary-navigation
           ul.four.columns.pull-right.text-right.omega
             li
-              a(href='/about') About
+              a(href='/about', data-url='about') About
             li
-              a(href='/contact') Contact
+              a(href='/contact', data-url='contact') Contact
 
       block content
 

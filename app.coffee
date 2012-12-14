@@ -28,8 +28,7 @@ app.configure ->
   app.use express.static(path.join(__dirname, "public"))
   app.use (err, req, res, next) ->
     res.render "500",
-      locals:
-        error: err
+      error: err
       status: 500
 
 #
