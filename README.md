@@ -17,6 +17,7 @@ A Node.js boilerplate including:
 - `npm install` (ensure mongodb is installed and running)
 - `node server`
 - `compass watch` (ensure compass is installed and running)
+- `coffee -w -o public/javascripts/custom -c public/javascripts/coffee`
 
 ## Todo
 
