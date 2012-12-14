@@ -43,7 +43,6 @@ exports.findByAttribute = (req, res) ->
   catch err
     lookup["slug"] = id
 
-  console.log "Retrieving page: " + id
   db.collection "pages", (err, collection) ->
     collection.findOne lookup, (err, item) ->
       res.send error: "A DB error has occurred"  if err
