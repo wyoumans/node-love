@@ -23,6 +23,8 @@ html
       link(href='stylesheets/ie.css', media='screen, projection', rel='/stylesheet', type='text/css')
 
     script(src='/javascripts/libs/jquery-1.8.3.min.js')
+    script(src='/javascripts/libs/modernizr.js')
+    script(src='/javascripts/libs/history.js')
     script(src='/javascripts/custom/custom.js')
 
     //if lt IE 9
@@ -32,7 +34,7 @@ html
     .container
       header.row
         .logo.nine.columns
-          a(href='/')
+          a(href='/', data-url='index')
             i(class="icon-heart")
             = "node(love)"
             span.superscript beta
@@ -42,8 +44,8 @@ html
               a(href='/about', data-url='about') About
             li
               a(href='/contact', data-url='contact') Contact
-
-      block content
+      #content-wrapper
+        block content
 
       footer.row.sixteen.columns.pull-right.text-right
         p
