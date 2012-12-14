@@ -34,16 +34,17 @@ html
     .container
       header.row
         .logo.nine.columns
-          a(href='/', data-url='index')
+          a(href='/')
             i(class="icon-heart")
             = "node(love)"
             span.superscript beta
         nav.primary-navigation
           ul.four.columns.pull-right.text-right.omega
             li
-              a(href='/about', data-url='about') About
+              a(href='/about') About
             li
-              a(href='/contact', data-url='contact') Contact
+              a(href='/contact') Contact
+
       #content-wrapper
         block content
 

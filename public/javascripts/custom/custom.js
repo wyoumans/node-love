@@ -7,28 +7,10 @@
   animation_delay = 100;
 
   $(function() {
-    var History;
     $(".container").hide().delay(animation_delay).fadeIn(animation_speed);
-    $(document).on("click", ".primary-navigation li a, .logo a", function(e) {
-      var change_title, change_url;
+    return $(document).on("click", ".primary-navigation li a, .logo a", function(e) {
       e.preventDefault();
-      change_url = $(this).data("url");
-      change_title = change_url.charAt(0).toUpperCase() + change_url.slice(1);
-      if (change_url === "index") {
-        change_url = "";
-        change_title = "Node.js, Express, CoffeeScript, Jade, Compass, Skeleton, MongoDB, Mocha Boilerplate";
-      }
-      return History.pushState(change_url, document.title.replace(/^(.*)\|.*$/, "$1 | ") + change_title, "/" + change_url);
-    });
-    History = window.History;
-    return History.Adapter.bind(window, "statechange", function() {
-      var State, next_page;
-      State = History.getState();
-      next_page = State.url.replace(/(.*\.com|.*:3000)/, "").replace(/\//g, "");
-      if (next_page === "") {
-        next_page = "index";
-      }
-      return changePage(next_page);
+      return changePage($(this).attr("href").replace(/^\/|\/$/g, ""));
     });
   });
 
@@ -37,15 +19,14 @@
       return;
     }
     $("#content-wrapper").stop(false, true).slideUp(animation_speed, function() {
+      var page_slug;
       if (new_url === "") {
-        new_url = "index";
+        page_slug = "index";
       }
       return $.get("/pages/" + new_url, function(data) {
-        console.log(data);
+        History.pushState(data.title, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + new_url);
         $("body").attr("class", new_url);
-        return $("#content-wrapper").html(data.content).delay(animation_delay).slideDown(animation_speed, function() {
-          return console.log("Animation Complete");
-        });
+        return $("#content-wrapper").html(data.content).delay(animation_delay).slideDown(animation_speed);
       });
     });
     if (typeof _gaq !== "undefined") {
