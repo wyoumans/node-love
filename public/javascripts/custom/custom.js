@@ -2,21 +2,23 @@
 (function() {
   var animation_delay, animation_speed, changePage;
 
-  animation_speed = 1000;
+  animation_speed = 400;
 
-  animation_delay = 200;
+  animation_delay = 100;
 
   $(function() {
     var History;
     $(".container").hide().delay(animation_delay).fadeIn(animation_speed);
     $(document).on("click", ".primary-navigation li a, .logo a", function(e) {
-      var change_url;
+      var change_title, change_url;
       e.preventDefault();
       change_url = $(this).data("url");
+      change_title = change_url.charAt(0).toUpperCase() + change_url.slice(1);
       if (change_url === "index") {
         change_url = "";
+        change_title = "Node.js, Express, CoffeeScript, Jade, Compass, Skeleton, MongoDB, Mocha Boilerplate";
       }
-      return History.pushState(change_url, document.title.replace(/^(.*)\|.*$/, "$1 | ") + change_url, "/" + change_url);
+      return History.pushState(change_url, document.title.replace(/^(.*)\|.*$/, "$1 | ") + change_title, "/" + change_url);
     });
     History = window.History;
     return History.Adapter.bind(window, "statechange", function() {
