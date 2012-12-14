@@ -15,8 +15,7 @@ $ ->
   $(document).on "click", ".primary-navigation li a, .logo a", (e) ->
     e.preventDefault()
     change_url = $(this).data "url"
-    if change_url == "index"
-      change_url = ""
+    change_url = ""  if change_url is "index"
 
     History.pushState change_url, document.title.replace(/^(.*)\|.*$/, "$1 | ") + change_url, "/" + change_url
 
@@ -31,8 +30,7 @@ changePage = (new_url) ->
   return  if $("body").attr("class") is new_url
   $("#content-wrapper").stop(false, true).slideUp animation_speed, ->
 
-    if new_url == ""
-      new_url = "index"
+    new_url = "index"  if new_url is ""
 
     $.get "/pages/" + new_url, (data) ->
       console.log data
