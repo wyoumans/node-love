@@ -20,11 +20,9 @@
     }
     $("#content-wrapper").stop(false, true).slideUp(animation_speed, function() {
       var page_slug;
-      if (new_url === "") {
-        page_slug = "index";
-      }
-      return $.get("/pages/" + new_url, function(data) {
-        History.pushState(data.title, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + new_url);
+      page_slug = (new_url === "" ? "index" : new_url);
+      return $.get("/pages/" + page_slug, function(data) {
+        History.pushState(page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + new_url);
         $("body").attr("class", new_url);
         return $("#content-wrapper").html(data.content).delay(animation_delay).slideDown(animation_speed);
       });

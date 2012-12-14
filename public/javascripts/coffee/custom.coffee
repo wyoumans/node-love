@@ -20,13 +20,13 @@ $ ->
 # Load new content and display it
 #
 changePage = (new_url) ->
-  return  if $("body").attr("class") is new_url
+  return if $("body").attr("class") is new_url
   $("#content-wrapper").stop(false, true).slideUp animation_speed, ->
 
-    page_slug = "index" if new_url is ""
+    page_slug = (if new_url is "" then "index" else new_url)
 
-    $.get "/pages/" + new_url, (data) ->
-      History.pushState data.title, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + new_url
+    $.get "/pages/" + page_slug, (data) ->
+      History.pushState page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + new_url
 
       $("body").attr "class", new_url
       $("#content-wrapper").html(data.content).delay(animation_delay).slideDown animation_speed
