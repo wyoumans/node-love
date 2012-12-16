@@ -28,10 +28,9 @@
     <script src="/javascripts/libs/history.js"></script>
     <script src="/javascripts/custom/custom.js"></script>
 
-    <!--[lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
   <body class="{{ slug }}">
     <div class="container">
       <header class="row">
