@@ -113,6 +113,14 @@ exports.findAll = (req, res) ->
 ###
 
 #
+# Render main layout
+#
+exports.layout = (req, res) ->
+  res.render "layout",
+    title: "Node.js, Express, CoffeeScript, Jade, Compass, Skeleton, MongoDB, Mocha Boilerplate"
+
+
+#
 # Populate 'pages' collection with sample data. This will only be executed if the 'pages' collection does not exist
 #
 populateDB = ->

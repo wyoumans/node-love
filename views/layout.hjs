@@ -46,7 +46,8 @@ html
               a(href='/contact') Contact
 
       #content-wrapper
-        block content
+        h1= title
+        {{ content }}
 
       footer.row.sixteen.columns.pull-right.text-right
         p
