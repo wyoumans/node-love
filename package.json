@@ -11,7 +11,7 @@
     "jade": "0.27.7",
     "coffee-script": "1.4.0",
     "mongodb": "1.2.2",
-    "mocha": "1.7.4"
+    "hogan": "2.0.0"
   },
   "engines": {
     "node": "0.8.x",
