@@ -54,7 +54,7 @@ app.get "/pages/:id", page.findByAttribute
 #
 # Else, render layout
 #
-app.get "*", page.layout
+app.get /^[^\.]*$/g, page.layout
 
 #
 # Web server initialization
