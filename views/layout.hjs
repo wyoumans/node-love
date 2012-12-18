@@ -51,7 +51,9 @@
 
       <section id="content-wrapper">
         <h1>{{ title }}</h1>
-        {{ content }}
+        <div class="row">{{ top }}</div>
+        <div class="row callout text-center sixteen columns"><p>{{ callout }}</p></div>
+        <div class="row">{{ bottom }}</div>
       </section>
 
       <footer class="row sixteen columns pull-right text-right">
