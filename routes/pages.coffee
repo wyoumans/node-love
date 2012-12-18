@@ -3,21 +3,22 @@
 #
 mongo = require "mongoskin"
 BSON = mongo.BSONPure
+collectionName = "pages"
 
 if process.env.MONGOHQ_URL
-  connection_string = process.env.MONGOHQ_URL
+  connectionString = process.env.MONGOHQ_URL
 else
-  connection_string = "mongodb://localhost:27017/nodelove"
+  connectionString = "mongodb://localhost:27017/nodelove"
 
-db = mongo.db(connection_string + "?auto_reconnect",
+db = mongo.db(connectionString + "?auto_reconnect",
   safe: false
 )
 
 db.open (err, db) ->
   unless err
     console.log "Connected to 'nodelove' database"
-    db.collection "pages", (err, collection) ->
-      if err
+    db.collection(collectionName).find().toArray (err, items) ->
+      unless items.length
         populateDB()
 
 #
@@ -35,24 +36,23 @@ exports.findByAttribute = (req, res) ->
   catch err
     lookup["slug"] = id
 
-  db.collection "pages", (err, collection) ->
-    collection.findOne lookup, (err, item) ->
-      res.send error: "A DB error has occurred"  if err
-      if item
-        res.send item
-      else
-        res.send 404
+  db.collection(collectionName).findOne lookup, (err, item) ->
+    if err
+      res.send error: "A DB error has occurred"
+    if item
+      res.send item
+    else
+      res.send 404
 
 # Find all pages
 exports.findAll = (req, res) ->
-  db.collection "pages", (err, collection) ->
-    collection.find().toArray (err, items) ->
-      if err
-        res.send error: "A DB error has occurred"
-      if items
-        res.send items
-      else
-        res.send 404
+  db.collection(collectionName).find().toArray (err, items) ->
+    if err
+      res.send error: "A DB error has occurred"
+    if items
+      res.send items
+    else
+      res.send 404
 
 #
 # Render main layout
@@ -94,8 +94,11 @@ populateDB = ->
     showHero: false
   ]
 
-  db.collection "pages", (err, collection) ->
-    collection.insert pages,
-      safe: true
-    , (err, result) ->
+  db.collection(collectionName).insert pages,
+    safe: true
+  , (err, result) ->
+    if err
+      console.log "A DB error has occurred"
+    else
+      console.log "The DB had been populated!"
 
