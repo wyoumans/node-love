@@ -42,14 +42,10 @@ app.configure "development", ->
 app.locals site_name: "Node Love"
 
 #
-# Pages API routes
+# Pages API get routes
 #
 app.get "/pages", page.findAll
 app.get "/pages/:id", page.findByAttribute
-
-#app.post "/pages", page.addPage
-#app.put "/pages/:id", page.updatePage
-#app.delete "/pages/:id", page.deletePage
 
 #
 # Else, render layout
