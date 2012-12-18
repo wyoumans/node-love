@@ -4,8 +4,6 @@
 mongo = require "mongoskin"
 BSON = mongo.BSONPure
 
-server = undefined
-db = undefined
 if process.env.MONGOHQ_URL
   connection_string = process.env.MONGOHQ_URL
 else
