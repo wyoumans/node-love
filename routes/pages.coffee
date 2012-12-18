@@ -1,15 +1,13 @@
 #
 # DB stuff
 #
-mongo = require "mongodb"
+mongo = require "mongoskin"
 BSON = mongo.BSONPure
 
 server = undefined
 db = undefined
 if process.env.MONGOHQ_URL
   connection_string = process.env.MONGOHQ_URL
-  db = new mongo.Db.connect process.env.MONGOHQ_URL, (error, client) ->
-    throw error  if error
 else
   connection_string = "mongodb://localhost:27017/nodelove"
   db = new mongo.Db("nodelove", new mongo.Server("localhost", 27017,
@@ -17,6 +15,8 @@ else
   ),
     safe: true
   )
+
+db = mongo.db(connection_string + "?auto_reconnect");
 
 db.open (err, db) ->
   unless err
