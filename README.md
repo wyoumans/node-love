@@ -28,4 +28,4 @@ A Node.js boilerplate including:
 
 ## License
 
-- Node Love is released under the MIT open source license.
+- Node Love is released under the MIT open source license. Please let me know if you find this useful and you want to be showcased on nodelove.com.
