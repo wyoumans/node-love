@@ -36,7 +36,7 @@
   <body class="{{ slug }}">
     <div class="container">
       <header class="row">
-        <div class="logo nine columns">
+        <div class="logo nine columns alpha">
           <a href="/">
             <i class="icon-heart"></i>
             node(love)
