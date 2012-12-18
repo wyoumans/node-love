@@ -10,13 +10,10 @@ if process.env.MONGOHQ_URL
   connection_string = process.env.MONGOHQ_URL
 else
   connection_string = "mongodb://localhost:27017/nodelove"
-  db = new mongo.Db("nodelove", new mongo.Server("localhost", 27017,
-    auto_reconnect: true
-  ),
-    safe: true
-  )
 
-db = mongo.db(connection_string + "?auto_reconnect");
+db = mongo.db(connection_string + "?auto_reconnect",
+  safe: false
+)
 
 db.open (err, db) ->
   unless err
