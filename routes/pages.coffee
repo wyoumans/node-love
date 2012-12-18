@@ -7,22 +7,21 @@ BSON = mongo.BSONPure
 server = undefined
 db = undefined
 if process.env.MONGOHQ_URL
+  connection_string = process.env.MONGOHQ_URL
   db = new mongo.Db.connect process.env.MONGOHQ_URL, (error, client) ->
     throw error  if error
 else
-  server = new mongo.Server("localhost", 27017,
+  connection_string = "mongodb://localhost:27017/nodelove"
+  db = new mongo.Db("nodelove", new mongo.Server("localhost", 27017,
     auto_reconnect: true
-  )
-  db = new mongo.Db("nodelove", server,
+  ),
     safe: true
   )
 
 db.open (err, db) ->
   unless err
     console.log "Connected to 'nodelove' database"
-    db.collection "pages",
-      safe: true
-    , (err, collection) ->
+    db.collection "pages", (err, collection) ->
       if err
         populateDB()
 
