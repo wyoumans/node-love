@@ -50,13 +50,22 @@
       </header>
 
       <section id="content-wrapper">
+        {{#person}}
+        <div class="row hero">
+          <div class="sixteen column">
+            <h1>{{ title }}</h1>
+          </div>
+        </div>
+        {{/person}}
+        {{^person}}
         <h1>{{ title }}</h1>
+        {{/person}}
         <div class="row">{{ top }}</div>
         <div class="row callout text-center sixteen columns"><p>{{ callout }}</p></div>
         <div class="row">{{ bottom }}</div>
       </section>
 
-      <footer class="row sixteen columns pull-right text-right">
+      <footer class="row sixteen columns pull-right text-right omega">
         <p>&copy; 2012&nbsp; <a href="http://www.williamyoumans.com" target="_blank">William Youmans</a>
       </footer>
     </div>
