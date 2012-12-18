@@ -61,8 +61,8 @@
         {{/showHero}}
         {{^showHero}}
         <h1>{{ title }}</h1>
-        {{/showHero}}
         <div class="row">{{{ top }}}</div>
+        {{/showHero}}
         <div class="row callout text-center sixteen columns"><p>{{ callout }}</p></div>
         <div class="row">{{{ bottom }}}</div>
       </section>
