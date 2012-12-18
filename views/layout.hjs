@@ -24,6 +24,7 @@
     <![endif]-->
 
     <script src="/javascripts/libs/jquery-1.8.3.min.js"></script>
+    <script src="/javascripts/libs/hogan-2.0.0.min.js"></script>
     <script src="/javascripts/libs/modernizr.js"></script>
     <script src="/javascripts/libs/history.js"></script>
     <script src="/javascripts/custom/custom.js"></script>
@@ -50,19 +51,19 @@
       </header>
 
       <section id="content-wrapper">
-        {{#person}}
+        {{#showHero}}
         <div class="row hero">
           <div class="sixteen column">
             <h1>{{ title }}</h1>
           </div>
         </div>
-        {{/person}}
-        {{^person}}
+        {{/showHero}}
+        {{^showHero}}
         <h1>{{ title }}</h1>
-        {{/person}}
-        <div class="row">{{ top }}</div>
+        {{/showHero}}
+        <div class="row">{{{ top }}}</div>
         <div class="row callout text-center sixteen columns"><p>{{ callout }}</p></div>
-        <div class="row">{{ bottom }}</div>
+        <div class="row">{{{ bottom }}}</div>
       </section>
 
       <footer class="row sixteen columns pull-right text-right omega">
