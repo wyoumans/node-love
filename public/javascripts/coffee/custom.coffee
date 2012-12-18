@@ -29,6 +29,6 @@ changePage = (new_url) ->
       History.pushState page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + new_url
 
       $("body").attr "class", new_url
-      $("#content-wrapper").html(data.content).delay(animation_delay).slideDown animation_speed
+      $("#content-wrapper").html(data.bottom).delay(animation_delay).slideDown animation_speed
 
   _gaq.push ["_trackPageview", new_url + "/"]  if typeof _gaq isnt "undefined"
