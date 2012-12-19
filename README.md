@@ -5,7 +5,7 @@ A Node.js boilerplate including:
 - [Node.js](http://nodejs.org/)
 - [Express](http://expressjs.com/)
 - [CoffeeScript](http://coffeescript.org/)
-- [Hogan](http://twitter.github.com/hogan.js/)
+- [Jade](http://jade-lang.com/)
 - [Compass](http://compass-style.org/)
 - [Skeleton](http://www.getskeleton.com/)
 - [MongoDB](http://www.mongodb.org/)
