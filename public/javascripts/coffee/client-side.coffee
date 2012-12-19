@@ -19,16 +19,19 @@ $ ->
 #
 # Load new content and display it
 #
-changePage = (new_url) ->
-  return if $("body").attr("class") is new_url
+changePage = (newURL) ->
+  return if $("body").attr("class") is newURL
   $("#content-wrapper").stop(false, true).slideUp animation_speed, ->
 
-    page_slug = (if new_url is "" then "index" else new_url)
+    page_slug = (if newURL is "" then "index" else newURL)
 
     $.get "/pages/" + page_slug, (data) ->
-      History.pushState page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + new_url
+      History.pushState page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + newURL
 
-      $("body").attr "class", new_url
-      $("#content-wrapper").html(data.bottom).delay(animation_delay).slideDown animation_speed
+      $("body").attr "class", newURL
+      console.log data
+      newContent = ich.content data
+      console.log newContent
+      $("#content-wrapper").html(newContent).delay(animation_delay).slideDown animation_speed
 
-  _gaq.push ["_trackPageview", new_url + "/"]  if typeof _gaq isnt "undefined"
+  _gaq.push ["_trackPageview", newURL + "/"]  if typeof _gaq isnt "undefined"

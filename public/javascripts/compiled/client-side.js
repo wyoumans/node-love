@@ -14,21 +14,25 @@
     });
   });
 
-  changePage = function(new_url) {
-    if ($("body").attr("class") === new_url) {
+  changePage = function(newURL) {
+    if ($("body").attr("class") === newURL) {
       return;
     }
     $("#content-wrapper").stop(false, true).slideUp(animation_speed, function() {
       var page_slug;
-      page_slug = (new_url === "" ? "index" : new_url);
+      page_slug = (newURL === "" ? "index" : newURL);
       return $.get("/pages/" + page_slug, function(data) {
-        History.pushState(page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + new_url);
-        $("body").attr("class", new_url);
-        return $("#content-wrapper").html(data.bottom).delay(animation_delay).slideDown(animation_speed);
+        var newContent;
+        History.pushState(page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + newURL);
+        $("body").attr("class", newURL);
+        console.log(data);
+        newContent = ich.content(data);
+        console.log(newContent);
+        return $("#content-wrapper").html(newContent).delay(animation_delay).slideDown(animation_speed);
       });
     });
     if (typeof _gaq !== "undefined") {
-      return _gaq.push(["_trackPageview", new_url + "/"]);
+      return _gaq.push(["_trackPageview", newURL + "/"]);
     }
   };
 

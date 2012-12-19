@@ -50,7 +50,9 @@
         </nav>
       </header>
 
-      <section id="content-wrapper">
+      <section id="content-wrapper"></section>
+
+      <script id="content" type="text/html">
         {{#showHero}}
         <div class="row hero">
           <div class="sixteen column">
@@ -64,7 +66,7 @@
         {{/showHero}}
         <div class="row callout text-center sixteen columns"><p>{{ callout }}</p></div>
         <div class="row">{{{ bottom }}}</div>
-      </section>
+      </script>
 
       <footer class="row sixteen columns pull-right text-right omega">
         <p>&copy; 2012&nbsp; <a href="http://www.williamyoumans.com" target="_blank">William Youmans</a>
