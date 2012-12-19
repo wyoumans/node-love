@@ -24,11 +24,10 @@
     <![endif]-->
 
     <script src="/javascripts/libs/jquery-1.8.3.min.js"></script>
-    <script src="/javascripts/libs/hogan-2.0.0.min.js"></script>
     <script src="/javascripts/libs/modernizr.js"></script>
     <script src="/javascripts/libs/history.js"></script>
+    <script src="/javascripts/libs/icanhaz.min.js"></script>
     <script src="/javascripts/compiled/client-side.js"></script>
-    <script src="/javascripts/compiled/templates.js"></script>
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
