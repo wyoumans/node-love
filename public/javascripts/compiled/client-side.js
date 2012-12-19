@@ -2,9 +2,9 @@
 (function() {
   var animation_delay, animation_speed, changePage;
 
-  animation_speed = 400;
+  animation_speed = 700;
 
-  animation_delay = 100;
+  animation_delay = 300;
 
   $(function() {
     $(".container").hide().delay(animation_delay).fadeIn(animation_speed);
@@ -15,21 +15,15 @@
   });
 
   changePage = function(newURL) {
+    var page_slug;
     if ($("body").attr("class") === newURL) {
       return;
     }
-    $("#content-wrapper").stop(false, true).slideUp(animation_speed, function() {
-      var page_slug;
-      page_slug = (newURL === "" ? "index" : newURL);
-      return $.get("/pages/" + page_slug, function(data) {
-        var newContent;
-        History.pushState(page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + newURL);
-        $("body").attr("class", newURL);
-        console.log(data);
-        newContent = ich.content(data);
-        console.log(newContent);
-        return $("#content-wrapper").html(newContent).delay(animation_delay).slideDown(animation_speed);
-      });
+    page_slug = (newURL === "" ? "index" : newURL);
+    $.get("/pages/" + page_slug, function(data) {
+      History.pushState(page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + newURL);
+      $("body").attr("class", newURL);
+      return $("#content-wrapper").showHtml(ich.content(data, animation_speed));
     });
     if (typeof _gaq !== "undefined") {
       return _gaq.push(["_trackPageview", newURL + "/"]);

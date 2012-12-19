@@ -1,5 +1,5 @@
-animation_speed = 400
-animation_delay = 100
+animation_speed = 700
+animation_delay = 300
 
 #
 # document.ready
@@ -21,17 +21,13 @@ $ ->
 #
 changePage = (newURL) ->
   return if $("body").attr("class") is newURL
-  $("#content-wrapper").stop(false, true).slideUp animation_speed, ->
 
-    page_slug = (if newURL is "" then "index" else newURL)
+  page_slug = (if newURL is "" then "index" else newURL)
 
-    $.get "/pages/" + page_slug, (data) ->
-      History.pushState page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + newURL
+  $.get "/pages/" + page_slug, (data) ->
+    History.pushState page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + newURL
 
-      $("body").attr "class", newURL
-      console.log data
-      newContent = ich.content data
-      console.log newContent
-      $("#content-wrapper").html(newContent).delay(animation_delay).slideDown animation_speed
+    $("body").attr "class", newURL
+    $("#content-wrapper").showHtml ich.content data, animation_speed
 
   _gaq.push ["_trackPageview", newURL + "/"]  if typeof _gaq isnt "undefined"
