@@ -24,10 +24,17 @@ changePage = (newURL) ->
 
   page_slug = (if newURL is "" then "index" else newURL)
 
+  loadPageContent newURL, true
+
+  _gaq.push ["_trackPageview", newURL + "/"]  if typeof _gaq isnt "undefined"
+
+#
+# Fetch page content and insert it into the DOM
+#
+loadPageContent = (newURL, pageChange) ->
   $.get "/pages/" + page_slug, (data) ->
-    History.pushState page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + newURL
+    if pageChange
+      History.pushState page_slug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + newURL
 
     $("body").attr "class", newURL
     $("#content-wrapper").showHtml ich.content data, animation_speed
-
-  _gaq.push ["_trackPageview", newURL + "/"]  if typeof _gaq isnt "undefined"
