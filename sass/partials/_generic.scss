@@ -88,16 +88,23 @@ h6 {
 }
 .hero {
   position: relative;
-  background-color: #EEEEEE;
+  background: transparent image-url('/images/template/hero.jpg') center center no-repeat;
+  background-size: cover;
   height: 400px;
   padding: 20px;
   @include border-radius(10px);
 
-  h1 {
+  .title-wrapper {
+    background-color: #EEEEEE;
+    @include border-radius(10px);
+    @include opacity(.7);
+    padding: 10px;
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     right: 20px;
     width: 200px;
-    color: #555555;
+    h1 {
+      color: #555555;
+    }
   }
 }
