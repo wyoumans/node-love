@@ -901,8 +901,8 @@ h6 { font-size: 12px; line-height: 18px; }
 .callout { font-size: 180%; line-height: normal; }
 
 .hero { position: relative; background: transparent url(/images/template/hero.jpg) center center no-repeat; background-size: cover; height: 400px; padding: 20px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; }
-.hero .title-wrapper { background-color: #EEEEEE; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; padding: 10px; position: absolute; bottom: 20px; right: 20px; width: 200px; }
-.hero .title-wrapper h1 { color: #555555; }
+.hero .title-wrapper { background-color: #EEEEEE; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; padding: 10px; position: absolute; bottom: 10px; right: 10px; width: 200px; }
+.hero .title-wrapper h1 { color: #000000; }
 
 /* Smaller than standard 960 (devices and browsers) */
 /* Tablet Portrait size to standard 960 (devices and browsers) */
