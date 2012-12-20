@@ -45,6 +45,7 @@ app.locals site_name: "Node Love"
 # Pages API get routes
 #
 app.get "/pages", page.findAll
+app.get "/navigation", page.findAllNavigation
 app.get "/pages/:id", page.findByAttribute
 
 #
