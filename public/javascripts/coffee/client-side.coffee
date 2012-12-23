@@ -6,6 +6,7 @@ animation_delay = 300
 #
 $ ->
   loadPageContent cleanURL(window.location.pathname), false
+  buildNavigation()
 
   #
   # Fade in content
@@ -13,7 +14,7 @@ $ ->
   $(".container").hide().delay(animation_delay).fadeIn animation_speed
 
   # Swap out page content
-  $(document).on "click", ".primary-navigation li a, .logo a", (e) ->
+  $(document).on "click", "#primary-navigation li a, .logo a", (e) ->
     e.preventDefault()
     changePage cleanURL($(this).attr("href"))
 
@@ -45,3 +46,13 @@ loadPageContent = (newURL, pageChange) ->
 #
 cleanURL = (uncleanURL) ->
   uncleanURL.replace /^\/|\/$/g, ""
+
+#
+# fetches and builds navigation
+#
+buildNavigation = () ->
+  $.get "/navigation", (data) ->
+    i = 0
+    while i < data.length
+      $("#primary-navigation ul").append ich.navitem data[i]
+      i++

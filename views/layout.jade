@@ -40,14 +40,8 @@ html
             i(class='icon-heart')
             = 'node(love)'
             span.superscript beta
-        nav.primary-navigation
+        nav#primary-navigation
           ul.seven.columns.pull-right.text-right
-            li
-              a(href='/features') Features
-            li
-              a(href='/documentation') Documentation
-            li
-              a(href='/credits') Credits
 
       section#content-wrapper
 
@@ -61,6 +55,9 @@ html
         {{/showHero}}
         <div class="row callout text-center sixteen columns"><p>{{ callout }}</p></div>
         <div class="row">{{{ bottom }}}</div>
+
+      script#navitem(type='text/html')
+        <li><a href="/{{ slug }}">{{ title }}</a></li>
 
       footer.row.sixteen.columns.pull-right.text-right
         p
