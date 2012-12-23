@@ -57,7 +57,12 @@ exports.findAll = (req, res) ->
 # Find all pages
 exports.findAllNavigation = (req, res) ->
 
-  db.collection(collectionName).find().toArray (err, items) ->
+  db.collection(collectionName).find(
+    hidden: false
+  ,
+    title: 1
+    slug: 1
+  ).toArray (err, items) ->
     if err
       res.send error: "A DB error has occurred"
     if items
