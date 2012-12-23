@@ -20,7 +20,9 @@ A Node.js boilerplate including:
 
 ## Todo
 
-- keep working
+- Add content and github download button
+- Write tests
+- Include Ember.js or Backbone.js for client side code
 
 ## Fonts
 
