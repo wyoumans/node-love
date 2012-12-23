@@ -37,22 +37,12 @@ exports.findByAttribute = (req, res) ->
     lookup["slug"] = id
 
   db.collection(collectionName).findOne lookup, (err, item) ->
-    if err
-      res.send error: "A DB error has occurred"
-    if item
-      res.send item
-    else
-      res.send 404
+    checkDBValue res, item, err
 
 # Find all pages
 exports.findAll = (req, res) ->
   db.collection(collectionName).find().toArray (err, items) ->
-    if err
-      res.send error: "A DB error has occurred"
-    if items
-      res.send items
-    else
-      res.send 404
+    checkDBValue res, items, err
 
 # Find all pages
 exports.findAllNavigation = (req, res) ->
@@ -63,12 +53,7 @@ exports.findAllNavigation = (req, res) ->
     title: 1
     slug: 1
   ).toArray (err, items) ->
-    if err
-      res.send error: "A DB error has occurred"
-    if items
-      res.send items
-    else
-      res.send 404
+    checkDBValue res, items, err
 
 #
 # Render main layout
@@ -133,3 +118,10 @@ populateDB = ->
     else
       console.log "The DB had been populated!"
 
+checkDBValue = (res, obj, err) ->
+  if err
+    res.send error: "A DB error has occurred"
+  if obj
+    res.send obj
+  else
+    res.send 404
