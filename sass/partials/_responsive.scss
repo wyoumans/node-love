@@ -14,8 +14,15 @@
 @media only screen and (max-width: 479px) {
   header {
     text-align: center;
-    .text-right {
-      text-align: center;
+    nav {
+      ul {
+        &.text-right {
+          text-align: center !important;
+        }
+        li {
+          margin-top: 15px;
+        }
+      }
     }
   }
 }
