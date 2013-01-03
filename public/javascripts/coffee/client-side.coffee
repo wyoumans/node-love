@@ -15,8 +15,9 @@ $ ->
 
   # Swap out page content
   $(document).on "click", "#primary-navigation li a, .logo a", (e) ->
-    e.preventDefault()
-    changePage cleanURL($(this).attr("href"))
+    unless $(this).hasClass "external"
+      e.preventDefault()
+      changePage cleanURL($(this).attr("href"))
 
 #
 # Load new content and display it

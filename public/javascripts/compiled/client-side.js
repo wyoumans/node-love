@@ -11,8 +11,10 @@
     buildNavigation();
     $(".container").hide().delay(animation_delay).fadeIn(animation_speed);
     return $(document).on("click", "#primary-navigation li a, .logo a", function(e) {
-      e.preventDefault();
-      return changePage(cleanURL($(this).attr("href")));
+      if (!$(this).hasClass("external")) {
+        e.preventDefault();
+        return changePage(cleanURL($(this).attr("href")));
+      }
     });
   });
 
@@ -38,10 +40,6 @@
     });
   };
 
-  cleanURL = function(uncleanURL) {
-    return uncleanURL.replace(/^\/|\/$/g, "");
-  };
-
   buildNavigation = function() {
     return $.get("/navigation", function(data) {
       var i, _results;
@@ -53,6 +51,10 @@
       }
       return _results;
     });
+  };
+
+  cleanURL = function(uncleanURL) {
+    return uncleanURL.replace(/^\/|\/$/g, "");
   };
 
 }).call(this);
