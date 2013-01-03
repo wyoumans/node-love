@@ -880,12 +880,13 @@ a:active { color: red; }
 .container { margin-top: 40px; }
 
 nav ul li { display: inline-block; margin: 0 0 0 20px; font-size: 14px; }
-nav ul li.download a { display: block; background-color: #F00; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; padding: 3px 5px; font-weight: bold; color: white; }
+nav ul li.download a { display: block; background-color: #F00; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; padding: 3px 10px 3px 5px; font-weight: bold; color: white; }
 nav ul li.download a:visited { color: white; }
 nav ul li.download a:focus { color: white; }
 nav ul li.download a:hover { color: white; }
 nav ul li.download a:active { color: white; }
 nav ul li.download a:hover { background-color: #BF3030; }
+nav ul li.download a i { font-size: 18px; display: inline-block; margin: 3px 5px 0 0; vertical-align: middle; }
 
 header .logo { font-size: 40px; }
 header .logo i { font-size: 20px; margin: 0 15px 0 0; color: red; }

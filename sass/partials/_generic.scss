@@ -37,11 +37,17 @@ nav ul li {
     display: block;
     background-color: #F00;
     @include border-radius(5px);
-    padding: 3px 5px;
+    padding: 3px 10px 3px 5px;
     font-weight: bold;
     @include link-colors(#FFF, #FFF, #FFF, #FFF, #FFF);
     &:hover {
       background-color: #BF3030;
+    }
+    i {
+      font-size: 18px;
+      display: inline-block;
+      margin: 3px 5px 0 0;
+      vertical-align: middle;
     }
   }
 }
