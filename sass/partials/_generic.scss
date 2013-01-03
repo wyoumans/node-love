@@ -33,12 +33,16 @@ nav ul li {
   display: inline-block;
   margin: 0 0 0 20px;
   font-size: 14px;
-  &.download {
+  &.download a {
+    display: block;
     background-color: #F00;
     @include border-radius(5px);
     padding: 3px 5px;
     font-weight: bold;
-    color: #FFF;
+    @include link-colors(#FFF, #FFF, #FFF, #FFF, #FFF);
+    &:hover {
+      background-color: #BF3030;
+    }
   }
 }
 header {
