@@ -42,12 +42,6 @@ loadPageContent = (newURL, pageChange) ->
     $("#content-wrapper").showHtml ich.content data, animation_speed
 
 #
-# Trims string of slashes and such
-#
-cleanURL = (uncleanURL) ->
-  uncleanURL.replace /^\/|\/$/g, ""
-
-#
 # fetches and builds navigation
 #
 buildNavigation = () ->
@@ -56,3 +50,9 @@ buildNavigation = () ->
     while i < data.length
       $("#primary-navigation ul").append ich.navitem data[i]
       i++
+
+#
+# Trims string of slashes and such
+#
+cleanURL = (uncleanURL) ->
+  uncleanURL.replace /^\/|\/$/g, ""
