@@ -15,5 +15,11 @@
   "engines": {
     "node": "0.8.x",
     "npm": "1.1.49"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "devDependencies": {
+    "mocha": "0.3.6"
   }
 }
