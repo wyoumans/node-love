@@ -1,4 +1,4 @@
-#mac ignores
+# Mac Ignores
 :2e*
 ._*
 *~
@@ -7,12 +7,7 @@
 -.save
 .com.apple.timemachine*
 
-#Compass
-.rvmrc
-.sass-cache/*
-Gemfile*
-
-#Node ignores
+# Node ignores
 lib-cov
 *.seed
 *.log
@@ -26,5 +21,13 @@ logs
 results
 npm-debug.log
 
-#other
+# Other
 /node_modules
+
+# Compass
+.rvmrc
+.sass-cache/*
+Gemfile*
+
+# Compiled Assets
+public/stylesheets/*.css
