@@ -18,9 +18,12 @@ A Node.js boilerplate including:
 - `compass watch` (ensure compass is installed and running)
 - `coffee -w -o public/javascripts/custom -c public/javascripts/coffee`
 
+## Google Analytics
+
+- To enable GA tracking, set an environmental variable `GA_TRACKING_CODE` with your tracking code.
+
 ## Todo
 
-- Add content and github download button
 - Write tests
 - Include Ember.js or Backbone.js for client side code
 

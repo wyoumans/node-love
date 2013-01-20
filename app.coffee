@@ -40,6 +40,7 @@ app.configure "development", ->
 # Locals variables
 #
 app.locals site_name: "Node Love"
+app.locals ga_tracking_code: process.env.GA_TRACKING_CODE || "UA-XXXXXXXXXX-XX"
 
 #
 # Pages API get routes
