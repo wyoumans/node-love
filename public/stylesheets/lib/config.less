@@ -1,0 +1,142 @@
+///
+// Configuration
+// ============================================================================
+// 
+// Variables for style elements
+// 
+// 
+// Contents
+// ----------------------------------------------------------------------------
+// 
+// - General
+//   - CSS Base
+//   - Document Background
+//   - Disable MS Filters
+// - Typography
+//   - Base Font Size
+//   - Document serif family
+//   - Document san-serif family
+//   - Document monospaced family
+//   - Document font family
+//   - Base document font size
+// - Site Measurements
+//   - Default Site Width
+//   - File & Folder Paths
+//   - Sprite Image
+//   - Image Directory
+// - Site Colours
+//   - Document Font Colour
+//   - Document Background Colour
+//   - Mouse Selector Background
+//   - Mouse Selector Font Colour
+///
+
+
+///
+// General
+// ----------------------------------------------------------------------------
+///
+
+// CSS Base 
+// @type {none|normalize|reset}
+@doc-base-css: normalize;
+
+// Document background
+// @type Background
+@doc-background: @doc-background-color;
+
+
+// Disable IE Filters
+// These can slow down page rendering in IE
+// @type Boolean
+@disable-filters: false;
+
+
+///
+// Typography
+// ----------------------------------------------------------------------------
+///
+
+// Base Font Size
+// Used as a default for px to (r)em conversions
+// @type Pixel
+@doc-base-font-size: 16;
+
+// Base Line Height
+// @type EM
+@doc-base-line-height: 1.618;
+
+// Document Serif Family
+// @type Font
+@doc-font-serif: Georgia, 'Times New Roman', Times, serif;
+
+// Document San-Serif Family
+// Sans-Serif == Helvetica, Arial >> http://css-tricks.com/sans-serif/
+// @type Font
+@doc-font-sans-serif: 'Helvetica Neue', Sans-Serif; 
+
+// Documet Monospaced Family
+// @type Font
+@doc-font-mono: Courier, monospace;
+
+// Document Base Font Family
+// @type Font
+@doc-base-font-family: @doc-font-sans-serif;
+
+// Document Header Font Family
+// @type Font
+@doc-header-font-family: @doc-font-sans-serif;
+
+
+///
+// Site Colours
+// ----------------------------------------------------------------------------
+///
+
+// Document Font Color
+// @type Hex
+@doc-font-color: #404040;
+
+// Document Background Color
+// @type Hex
+@doc-background-color: #EFEFEF;
+
+// Document Link Color
+// @type Hex
+@doc-link-color: #C09;
+
+// Document Link Color on Hover
+// @type Hex
+@doc-link-color-hover: darken(@doc-link-color, 10%);
+
+// Mouse Selector Background
+// @type Hex
+@selection-background: #999;
+
+// Mouse selector font colour
+// @type Hex
+@selection-color: #DDD;
+
+
+///
+// Site Measurements
+// ----------------------------------------------------------------------------
+///
+
+// Default Site Width
+// @type PX
+@doc-default-width: 960px;
+
+
+///
+// File & Folder Paths
+// ----------------------------------------------------------------------------
+///
+
+// Sprite Image
+// @type Path
+@img-sprite: 'sprite.png';
+
+// Image Directory
+// @type Path
+@img-dir: '../../img';

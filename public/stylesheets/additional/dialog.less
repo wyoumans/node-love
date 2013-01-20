@@ -1,0 +1,83 @@
+/**
+ * Dialog Box Styles
+ * ============================================================================
+ *
+ * Style values for custom jQuery dialog boxes
+ *
+ *
+ * Content
+ * ----------------------------------------------------------------------------
+ * - Dialog Box Group
+ * - Wrapper
+ */
+
+
+/**
+ * Dialog Box Group
+ * ----------------------------------------------------------------------------
+ */
+.dialog-box {
+
+	@shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 0 100px rgba(0,0,0,.5);
+	
+	position: fixed;
+    top: 40%;
+    left: 50%;
+	padding: (20px - 5) 20px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #CCC;
+	text-align: center;
+	font-weight: 400;
+	max-width: 60%;
+	
+	#gradient > .vertical(#f4f4f4, #e7e7e7);
+	.box-shadow(@shadow);
+	.border-radius(6px);
+
+	p {
+		text-align: center;
+	}
+	
+	.btn {
+		margin: 0 (20px / 2);
+		font-weight: 400;
+	}
+
+	.no-js & {
+		display: block;
+		position: relative;
+	}
+
+	&.success, 
+	&.error {
+		color: #FFF;
+		text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	}
+
+	&.success {
+		#gradient > .vertical(#62C462, darken(#57A957, 20%));
+		border-color: darken(#57A957, 10%);
+	}
+
+	&.error {
+		#gradient > .vertical(#ee5f5b, darken(#c43c35, 20%));
+		border-color: darken(#c43c35, 10%);
+	}
+
+}
+
+
+/**
+ * Wrapper
+ * ----------------------------------------------------------------------------
+ */
+#dialog-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width:100%;
+	height: 100%;
+	background:  rgba(0,0,0,.7);
+}

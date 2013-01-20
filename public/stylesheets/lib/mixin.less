@@ -1,0 +1,525 @@
+///
+// Mixin
+// ============================================================================
+//
+// Selection of LESS mixins from LESSelements (http://lesselements.com/) and 
+// ClearLess (https://github.com/clearleft/clearless/)... which is where I
+// stole the description on these items!
+//
+//
+// Content
+// ----------------------------------------------------------------------------
+// - Border Radius
+// - Box Sizing
+// - Box Shadow
+// - Transition
+// - Tranform
+// - Tranform Origin
+// - Rotate
+// - Placeholder
+// - Gradient
+//   - hortizontal
+//   - vertical
+// - Clearfix
+// - Inline Block
+// - Image Replace
+// - Image Replace Text
+// - Hidden
+// - Visually Hidden
+// - Size
+// - Font Size rem
+// - Font Size em
+// - Word Wrap
+// - Column Count
+// - Column Gap
+// - Column With
+// - Column Rule
+// - Column Break Before
+// - Opacity
+// - Image
+//   - Sprite
+//   - Single
+//   - Position
+///
+
+
+///
+// Border Radius
+// ----------------------------------------------------------------------------
+// Generates a `box-radius` property with the appropriate vendor prefixes
+///
+.border-radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+	-webkit-background-clip: padding-box; 
+	-moz-border-radius: @radius;
+	-moz-background-clip: padding;
+	border-radius: @radius;
+	background-clip: padding-box; 
+}
+
+
+///
+// Box Sizing
+// ----------------------------------------------------------------------------
+// Generates a `box-sizing` property with the appropriate vendor prefixes
+///
+.box-sizing(@type: border-box) {
+	-moz-box-sizing: @type;
+	-webkit-box-sizing: @type;
+	-ms-box-sizing: @type;
+	box-sizing: @type;
+}
+
+
+///
+// Box Shadow
+// ----------------------------------------------------------------------------
+// Generates a `box-shadow` property with the appropriate vendor prefixes
+///
+.box-shadow(@shadow: 1px 1px 2px rgba(0,0,0,0.25)) {
+	-webkit-box-shadow: @shadow;
+	-moz-box-shadow: @shadow;
+	box-shadow: @shadow;
+}
+
+
+///
+// Transition
+// ----------------------------------------------------------------------------
+// Generates a `transition` property with the appropriate vendor prefixes
+///
+.transition(@transition) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	transition: @transition;
+}
+
+
+///
+// Transform
+// ----------------------------------------------------------------------------
+// Specifies the two-dimensional linear transformation applied to an element. 
+// The origin of the transformation is specified by the `transform-origin` 
+// property
+// 
+.transform(@transform) {
+ 	-webkit-transform: @transform;
+	-moz-transform: @transform;
+	-ms-transform: @transform;
+	-o-transform: @transform;
+	transition: @transform;
+}
+
+
+///
+// Transform Origin
+// ----------------------------------------------------------------------------
+// Specifies the origin of two-dimensional linear transformations specified 
+// with the `transform` property
+// 
+.transform-origin(@origin) {
+ 	-webkit-transform-origin: @origin;
+	-moz-transform-origin: @origin;
+	-ms-transform-origin: @origin;
+	-o-transform-origin: @origin;
+	transition-origin: @origin;
+}
+
+
+///
+// Rotate
+// ----------------------------------------------------------------------------
+// Generates a `transform` property with a rotation value and with the
+// appropriate vendor prefixes
+///
+.rotate(@rotation) {
+	-webkit-transform: rotate(@rotation);
+	-moz-transform: rotate(@rotation);
+	-o-transform: rotate(@rotation);
+	transform: rotate(@rotation);
+}
+
+
+///
+// Placeholder
+// ----------------------------------------------------------------------------
+// Generates pseudo-selector rules to globally change the colour of placeholder
+// text for inputs. Use outside of element selectors
+///
+.placeholder(@color: #DDD) {
+	:-moz-placeholder {
+		color: @color;
+	}
+	::-webkit-input-placeholder {
+		color: @color;
+	}
+}
+
+
+///
+// Gradient
+// ----------------------------------------------------------------------------
+// Uses CSS3 gradient values to generate background gradients with appropriate 
+// vendor prefixed implementations. Output varies according to the value of 
+// the @disable-filters setting and the child selector. Also you can specify an
+// alternative background-color rather than relying on the end-color
+///
+#gradient {
+
+	.horizontal (@start-color, @end-color, @alt-color: false) when not (@disable-filters) {
+		.background-color(@alt-color);
+	    .background-color(@color) when not (@alt-color = false) {
+	    	background-color: @color;
+	    }
+	    .background-color(@color) when (@alt-color = false) {
+	     	background-color: @end-color;
+	    }
+		background-repeat: repeat-x;
+		background-image: -khtml-gradient(linear, left top, right top, from(@start-color), to(@end-color)); /* Konqueror */
+		background-image: -moz-linear-gradient(left, @start-color, @end-color); /* FF 3.6+ */
+		background-image: -ms-linear-gradient(left, @start-color, @end-color); /* IE10 */
+		background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @start-color), color-stop(100%, @end-color)); /* Safari 4+, Chrome 2+ */
+		background-image: -webkit-linear-gradient(left, @start-color, @end-color); /* Safari 5.1+, Chrome 10+ */
+		background-image: -o-linear-gradient(left, @start-color, @end-color); /* Opera 11.10 */
+		background-image: -ms-linear-gradient(left, @start-color 0%, @end-color 100%);  /* IE10+ */
+		background-image: linear-gradient(left, @start-color, @end-color); /* the standard */
+		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@start-color,@end-color)); /* IE6 & IE7 */
+		-ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@start-color,@end-color); /* IE8+ */
+	}
+
+	.horizontal (@start-color, @end-color, @alt-color: false) when (@disable-filters) {
+		.background-color(@alt-color);
+	    .background-color(@color) when not (@alt-color = false) {
+	    	background-color: @color;
+	    }
+	    .background-color(@color) when (@alt-color = false) {
+	     	background-color: @end-color;
+	    }
+		background-repeat: repeat-x;
+		background-image: -khtml-gradient(linear, left top, right top, from(@start-color), to(@end-color)); /* Konqueror */
+		background-image: -moz-linear-gradient(left, @start-color, @end-color); /* FF 3.6+ */
+		background-image: -ms-linear-gradient(left, @start-color, @end-color); /* IE10 */
+		background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @start-color), color-stop(100%, @end-color)); /* Safari 4+, Chrome 2+ */
+		background-image: -webkit-linear-gradient(left, @start-color, @end-color); /* Safari 5.1+, Chrome 10+ */
+		background-image: -o-linear-gradient(left, @start-color, @end-color); /* Opera 11.10 */
+		background-image: -ms-linear-gradient(left, @start-color 0%, @end-color 100%);  /* IE10+ */
+		background-image: linear-gradient(left, @start-color, @end-color); /* the standard */
+	}
+
+	.vertical (@start-color, @end-color, @alt-color: false) when (@disable-filters)  {
+		.background-color(@alt-color);
+	    .background-color(@color) when not (@alt-color = false) {
+	    	background-color: @color;
+	    }
+	    .background-color(@color) when (@alt-color = false) {
+	     	background-color: @end-color;
+	    }
+		background-repeat: repeat-x;
+		background-image: -khtml-gradient(linear, left top, left bottom, from(@start-color), to(@end-color)); /* Konqueror */
+		background-image: -moz-linear-gradient(@start-color, @end-color); /* FF 3.6+ */
+		background-image: -ms-linear-gradient(@start-color, @end-color); /* IE10 */
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start-color), color-stop(100%, @end-color)); /* Safari 4+, Chrome 2+ */
+		background-image: -webkit-linear-gradient(@start-color, @end-color); /* Safari 5.1+, Chrome 10+ */
+		background-image: -o-linear-gradient(@start-color, @end-color); /* Opera 11.10 */
+		background-image: -ms-linear-gradient(top, @start-color 0%, @end-color 100%);  /* IE10+ */
+		background-image: linear-gradient(@start-color, @end-color); /* the standard */
+	}
+
+	.vertical (@start-color, @end-color, @alt-color: false) when not (@disable-filters)  {
+		.background-color(@alt-color);
+	    .background-color(@color) when not (@alt-color = false) {
+	    	background-color: @color;
+	    }
+	    .background-color(@color) when (@alt-color = false) {
+	     	background-color: @end-color;
+	    }
+		background-repeat: repeat-x;
+		background-image: -khtml-gradient(linear, left top, left bottom, from(@start-color), to(@end-color)); /* Konqueror */
+		background-image: -moz-linear-gradient(@start-color, @end-color); /* FF 3.6+ */
+		background-image: -ms-linear-gradient(@start-color, @end-color); /* IE10 */
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start-color), color-stop(100%, @end-color)); /* Safari 4+, Chrome 2+ */
+		background-image: -webkit-linear-gradient(@start-color, @end-color); /* Safari 5.1+, Chrome 10+ */
+		background-image: -o-linear-gradient(@start-color, @end-color); /* Opera 11.10 */
+		background-image: -ms-linear-gradient(top, @start-color 0%, @end-color 100%);  /* IE10+ */
+		background-image: linear-gradient(@start-color, @end-color); /* the standard */
+		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@start-color,@end-color)); /* IE6 & IE7 */
+		-ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@start-color,@end-color); /* IE8+ */
+	}
+
+}
+
+
+///
+// Clearfix
+// ----------------------------------------------------------------------------
+// Generates the appropriate properies to apply the micro-clearfix hack to the
+// element
+///
+.clearfix() {
+	&:before,
+	&:after {
+	    content: "";
+	    display: table;
+	}
+	&:after {
+	    clear: both;
+	}
+	.lt-ie8 & {
+		zoom: 1;
+	}
+}
+
+
+///
+// Inline Block
+// ----------------------------------------------------------------------------
+// Helper to generate the inline-block display property plus fixes for IE7
+///
+.inline-block() {
+	display: inline-block;
+	
+	.ie7 & {
+		display: inline;
+		zoom: 1;
+	}
+
+}
+
+
+///
+// Image Replace
+// ----------------------------------------------------------------------------
+// Generates text-removing properties for use in image replacement. Does not
+// specify the background image (or it's positioning) itself - this needs to be
+// specified manually (or use one of the sprite mixins, if appropriate)
+///
+.image-replace() {
+	border: 0;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	background-color: transparent;
+}
+
+
+///
+// Image Replace Text
+// ----------------------------------------------------------------------------
+// Hides only the text from view
+///
+.image-replace-text() {
+	text-indent: -999em;
+}
+
+
+///
+// Hidden
+// ----------------------------------------------------------------------------
+// Hides content from the page. Uses `!important` to override inline-styles
+// added by JS
+///
+.hidden() {
+	display: none !important;
+	visibility: hidden;
+}
+
+
+///
+// Visually Hidden
+// ----------------------------------------------------------------------------
+// Hides content visually, but leaves is accessible to screenreaders. Also
+// generates helper classes to allow the element to be focusable when navigated
+// to via the keyboard
+///
+.visually-hidden() {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	&.focusable:active,
+	&.focusable:focus {
+	    clip: auto;
+	    height: auto;
+	    margin: 0;
+	    overflow: visible;
+	    position: static;
+	    width: auto;
+	}
+}
+
+
+///
+// Size
+// ----------------------------------------------------------------------------
+// Shortcut for generating width and height properties
+///
+
+.size(@thesize) {
+	width: @thesize;
+	height: @thesize;
+}
+
+.size(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
+
+///
+// Font Size rem
+// ----------------------------------------------------------------------------
+// Generates a font-size property with the pixel value converted to rems and
+// provides a pixel based fallback for browsers that do not support rem units
+///
+.font-size-rem(@size) {
+	@rem-size: ( @size / @doc-base-font-size );
+	font-size: ~`"@{size}px"`;
+	font-size: ~`"@{remSize}rem"`;
+}
+
+
+///
+// Font Size em
+// ----------------------------------------------------------------------------
+// Generates a font-size property with the pixel value converted to ems
+///
+.font-size-em(@target-px-size, @context-px-size:@doc-base-font-size) {
+	font-size: (@target-px-size / @context-px-size) * 1em;
+}
+
+
+///
+// Word Wrap
+// ----------------------------------------------------------------------------
+// Implement word-wrapping for text within the element, with hyphenation where
+// supported. See 
+// http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+///
+.word-wrap() {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+
+///
+// Column Count
+// ----------------------------------------------------------------------------
+// Specifies the number of columns desired in a multicolumn flow
+///
+.col-count(@count: auto) {
+	-webkit-column-count: @count;
+	   -moz-column-count: @count;
+			column-count: @count;
+}
+
+
+///
+// Column Gap
+// ----------------------------------------------------------------------------
+// Specifies the space between columns in a multicolumn flow
+///
+.col-gap(@gap: normal) {
+	-webkit-column-gap: @gap;
+	-moz-column-gap: @gap;
+	column-gap: @gap;
+}
+
+
+///
+// Column Width
+// ----------------------------------------------------------------------------
+// Specifies the width of the column in a multicolumn flow
+///
+.col-width(@width) {
+	-webkit-column-width: @width;
+	-moz-column-width: @width;
+	column-width: @width;
+}
+
+
+///
+// Column Rule
+// ----------------------------------------------------------------------------
+// Specifies the color, style and width of the column rule.
+// @param style <width> <style> <color>
+///
+.col-rule(@style) {
+	-webkit-column-rule: @style;
+	-moz-column-rule: @style;
+	column-rule: @style;
+}
+
+
+///
+// Column Break Before
+// ----------------------------------------------------------------------------
+// Specifies whether a column break should occur before an element
+///
+.col-break-before(@policy: auto) {
+	-webkit-column-break-before: @policy;
+	-moz-column-break-before: @policy;
+	column-break-before: @policy;
+}
+
+
+///
+// Reset IE Filters 
+// ----------------------------------------------------------------------------
+// Removes the use of a filter (taken from Bootstrap)
+///
+.reset-filter() when not (@disable-filters) {
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+
+///
+// Opacity
+// ----------------------------------------------------------------------------
+// Cross browser opacity for transparancy. Note that the IE filter fix causes
+// all child elements to be transparent as well. Requires you sets as a per-
+// centage
+///
+
+.opacity(@alpha) when not (@disable-filters) {
+	-webkit-opacity: (@alpha / 100);
+	-moz-opacity: (@alpha / 100);
+	opacity: (@alpha / 100);
+	filter: e(%("alpha(opacity=%d)", @alpha));
+}
+
+.opacity(@alpha) when (@disable-filters) {
+	-webkit-opacity: (@alpha / 100);
+	-moz-opacity: (@alpha / 100);
+	opacity: (@alpha / 100);
+}
+
+
+///
+// Image
+// ----------------------------------------------------------------------------
+// For the main site template images and sprites- http://bit.ly/KMprA
+///
+#img {
+
+	.sprite(@x, @y, @img: @sprite-img, @repeat: no-repeat, @background-color: transparent) {
+		background: @background-color url('@{img-dir}@{img}') @x @y @repeat;
+	}
+
+	.single(@img: @sprite-img, @repeat: no-repeat) {
+		background-image: url('@{img}');
+		background-repeat: @repeat;
+	}
+
+	.pos(@x, @y) {
+		background-position: @x @y;
+	}
+
+}

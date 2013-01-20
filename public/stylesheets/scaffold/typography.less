@@ -1,0 +1,220 @@
+/**
+ * Typography
+ * ============================================================================
+ *
+ * The base typography of thesite
+ *
+ *
+ * Content
+ * ----------------------------------------------------------------------------
+ * - Headers
+ * - Text Groups
+ * - Quote
+ * - Monospaced
+ * - Misc.
+ */
+
+
+/**
+ * Headers
+ * ----------------------------------------------------------------------------
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1em;
+    padding-bottom: 0.4em;
+    font-family: @doc-header-font-family
+}
+
+h1 {
+    font-size: 3em;
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    font-size: 2em;
+    padding-top: 0.7em;
+}
+
+h3, h4, h5, h6 {
+    padding-top: 0.5em;
+}
+    
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+
+/**
+ * Text Groups
+ * ----------------------------------------------------------------------------
+ */
+
+p,
+li,
+dd,
+dt {
+    line-height: @doc-base-line-height;
+}
+
+p,
+pre {
+    margin: 1em 0;
+}
+
+
+/**
+ * Quote
+ * ----------------------------------------------------------------------------
+ */
+
+blockquote {
+    margin: 1em 2em;
+}
+
+q {
+    quotes: none;
+}
+
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+
+/**
+ * Monospaced
+ * ----------------------------------------------------------------------------
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: @doc-font-mono;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+/**
+ * Inline
+ * ----------------------------------------------------------------------------
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+
+/**
+ * Links
+ * ----------------------------------------------------------------------------
+ */
+
+a {
+    color: @doc-link-color;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/**
+ * Lists
+ * ----------------------------------------------------------------------------
+ */
+
+dl,
+menu,
+ol,
+ul {
+    margin: 0.05em 0;
+    padding: 0 0 0 40px;
+
+    ul,
+    ol,
+    dl {
+        margin: 0;
+    }
+}
+
+dd {
+    padding: 0 0 0 40px;
+    margin: 0;
+}
+
+
+/**
+ * Misc.
+ * ----------------------------------------------------------------------------
+ */
+
+li,
+p,
+dt,
+dd,
+blockquote {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
