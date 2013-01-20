@@ -6,7 +6,7 @@ A Node.js boilerplate including:
 - [Express](http://expressjs.com/)
 - [CoffeeScript](http://coffeescript.org/)
 - [Jade](http://jade-lang.com/)
-- [Compass](http://compass-style.org/)
+- [Less](http://lesscss.org/)
 - [Skeleton](http://www.getskeleton.com/)
 - [MongoDB](http://www.mongodb.org/)
 
@@ -15,7 +15,6 @@ A Node.js boilerplate including:
 
 - `npm install` (ensure mongodb is installed and running)
 - `node server`
-- `compass watch` (ensure compass is installed and running)
 - `coffee -w -o public/javascripts/custom -c public/javascripts/coffee`
 
 ## Google Analytics
