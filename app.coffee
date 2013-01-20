@@ -24,6 +24,7 @@ app.configure ->
   app.use express.cookieParser 'f6cfcf4dabfeb866731392f11da591fc'
   app.use express.session()
   app.use app.router
+  app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use express.static(path.join(__dirname, 'public'))
   app.use (err, req, res, next) ->
     res.render '500',
