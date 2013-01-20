@@ -1,22 +1,22 @@
 {
-  "name": "node-love",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node server",
-    "test": "make test"
+  'name': 'node-love',
+  'version': '0.0.1',
+  'private': true,
+  'scripts': {
+    'start': 'node server',
+    'test': 'make test'
   },
-  "dependencies": {
-    "express": "3.0.3",
-    "coffee-script": "1.4.0",
-    "mongoskin": "0.4.4",
-    "jade": "0.27.7"
+  'dependencies': {
+    'express': '3.0.3',
+    'coffee-script': '1.4.0',
+    'mongoskin': '0.4.4',
+    'jade': '0.27.7'
   },
-  "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.49"
+  'engines': {
+    'node': '0.8.x',
+    'npm': '1.1.49'
   },
-  "devDependencies": {
-    "mocha": "0.3.6"
+  'devDependencies': {
+    'mocha': '0.3.6'
   }
 }
