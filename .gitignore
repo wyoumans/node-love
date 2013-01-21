@@ -24,10 +24,5 @@ npm-debug.log
 # Other
 /node_modules
 
-# Compass
-.rvmrc
-.sass-cache/*
-Gemfile*
-
 # Compiled Assets
 public/stylesheets/*.css
