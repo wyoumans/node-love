@@ -1,3 +1,5 @@
+@disable-filters: false;
+
 ///
 // Mixin
 // ============================================================================
@@ -367,30 +369,6 @@
   width: @width;
   height: @height;
 }
-
-
-///
-// Font Size rem
-// ----------------------------------------------------------------------------
-// Generates a font-size property with the pixel value converted to rems and
-// provides a pixel based fallback for browsers that do not support rem units
-///
-.font-size-rem(@size) {
-  @rem-size: ( @size / @doc-base-font-size );
-  font-size: ~`"@{size}px"`;
-  font-size: ~`"@{remSize}rem"`;
-}
-
-
-///
-// Font Size em
-// ----------------------------------------------------------------------------
-// Generates a font-size property with the pixel value converted to ems
-///
-.font-size-em(@target-px-size, @context-px-size:@doc-base-font-size) {
-  font-size: (@target-px-size / @context-px-size) * 1em;
-}
-
 
 ///
 // Word Wrap

@@ -1,15 +1,20 @@
 body {
-  font-family: $base-family;
+  font-family: @base-family;
   font-weight: 300;
-  background: transparent image-url('/images/template/grid-18px-masked.png') repeat-x 0 0;
+  background: transparent url(/images/template/grid-18px-masked.png) repeat-x 0 0;
   border-top: 5px solid red;
 }
 h1, h2, h3, h4, h5, h6, .logo , .callout{
-  font-family: $header-family, Helvetica, Arial, sans-serif;
+  font-family: @header-family;
   font-weight: normal;
 }
 a {
-  @include link-colors(#000, #F00, #F00, #000, #000);
+  &, &:visited {
+    color: #000;
+  }
+  &:hover, &:active {
+    color: #F00;
+  }
 }
 .pull-right {
   float: right !important;
@@ -30,22 +35,25 @@ a {
   margin-top: 40px;
 }
 nav ul li {
-  display: inline-block;
+  .inline-block();
   margin: 0 0 0 20px;
   font-size: 14px;
   &.download a {
     display: block;
     background-color: #F00;
-    @include border-radius(5px);
+    .border-radius(5px);
     padding: 3px 10px 3px 5px;
     font-weight: bold;
-    @include link-colors(#FFF, #FFF, #FFF, #FFF, #FFF);
+    &, &:active, &:visited {
+      color: #FFF;
+    }
     &:hover {
+      color: #FFF;
       background-color: #BF3030;
     }
     i {
       font-size: 18px;
-      display: inline-block;
+      .inline-block();
       margin: 3px 5px 0 0;
       vertical-align: middle;
     }
@@ -60,7 +68,7 @@ header {
       color: red;
     }
     .superscript {
-      display: inline-block;
+      .inline-block();
       color: #AAA;
       font-size: 20px;
       margin: -10px 0 0 5px;
@@ -105,16 +113,16 @@ h6 {
 }
 .hero {
   position: relative;
-  background: transparent image-url('/images/template/hero.jpg') center center no-repeat;
+  background: transparent url(/images/template/hero.jpg) center center no-repeat;
   background-size: cover;
   height: 400px;
   padding: 20px;
-  @include border-radius(10px);
+  .border-radius(10px);
 
   .title-wrapper {
     background-color: #EEEEEE;
-    @include border-radius(10px);
-    @include opacity(.6);
+    .border-radius(10px);
+    .opacity(60);
     padding: 10px;
     position: absolute;
     bottom: 10px;
