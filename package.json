@@ -25,5 +25,8 @@
     "node": "0.8.x",
     "npm": "1.1.x"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "zombie": "1.4.x",
+    "should": "1.2.x"
+  }
 }
