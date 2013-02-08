@@ -42,30 +42,14 @@ html
 
       section#content-wrapper
 
-      script#content(type='text/html')
-        {{#showHero}}
-        <div class="row hero"><div class="sixteen column"><div class="title-wrapper"><h1>{{ title }}</h1></div></div></div>
-        {{/showHero}}
-        {{^showHero}}
-        <div class="row sixteen columns"><h1>{{ title }}</h1></div>
-        <div class="row">{{{ top }}}</div>
-        {{/showHero}}
-        <div class="row callout text-center sixteen columns"><p>{{ callout }}</p></div>
-        <div class="row">{{{ bottom }}}</div>
-
-      script#navitem(type='text/html')
-        <li><a href="/{{ slug }}">{{ title }}</a></li>
-
       footer.row.sixteen.columns.pull-right.text-right
         p
           &copy; 2012&nbsp;
           a(href="http://www.williamyoumans.com", target="_blank") William Youmans
 
     script(src='/javascripts/vendor/jquery-1.8.3.min.js')
-    //- script(src='/javascripts/vendor/ember.min.js')
     script(src='/javascripts/vendor/jquery.showhtml.js')
     script(src='/javascripts/vendor/modernizr.js')
     script(src='/javascripts/vendor/history.js')
-    script(src='/javascripts/vendor/icanhaz.min.js')
     script(src='/javascripts/compiled/client-side.js')
     script var _gaq = _gaq || []; _gaq.push(['_setAccount', '#{ga_tracking_code}']); _gaq.push(['_trackPageview']); (function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
