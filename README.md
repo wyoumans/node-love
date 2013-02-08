@@ -15,7 +15,7 @@ A Node.js boilerplate including:
 
 - `npm install` (ensure mongodb is installed and running)
 - `node server`
-- `coffee -w -o public/javascripts/custom -c public/javascripts/coffee`
+- `coffee -c -o public/javascripts/compiled -c public/javascripts/coffee`
 
 ## Google Analytics
 
