@@ -26,3 +26,4 @@ npm-debug.log
 
 # Compiled Assets
 public/stylesheets/*.css
+public/javascripts/compiled
