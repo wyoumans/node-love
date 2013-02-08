@@ -14,8 +14,7 @@ A Node.js boilerplate including:
 ## Getting Started
 
 - `npm install` (ensure mongodb is installed and running)
-- `node server`
-- `coffee -c -o public/javascripts/compiled -c public/javascripts/coffee`
+- `make run`
 
 ## Google Analytics
 
@@ -23,7 +22,7 @@ A Node.js boilerplate including:
 
 ## Todo
 
-- Write tests
+- Write tests with Zombie or Phantom
 - Include Ember.js or Backbone.js for client side code
 
 ## Fonts
