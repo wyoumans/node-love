@@ -21,6 +21,7 @@
     "jade": "~0.27.0",
     "less-middleware": "~0.1.0",
     "templatizer": "latest"
+    "browserify": "latest"
   },
   "engines": {
     "node": "0.8.x",

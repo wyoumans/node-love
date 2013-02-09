@@ -19,6 +19,8 @@ html
     link(rel='stylesheet', media='screen, projection', href='/stylesheets/screen.css', type='text/css')
     link(rel='stylesheet', media='print', href='/stylesheets/print.css', type='text/css')
 
+    script(src='/javascripts/vendor/modernizr.js')
+
     //if IE
       link(href='stylesheets/ie.css', media='screen, projection', rel='/stylesheet', type='text/css')
 
@@ -48,10 +50,5 @@ html
           a(href="http://www.williamyoumans.com", target="_blank") William Youmans
 
     script(src='/javascripts/vendor/jquery-1.8.3.min.js')
-    script(src='/javascripts/vendor/modernizr.js')
-    script(src='/javascripts/vendor/history.js')
-    script(src='/javascripts/compiled/client-side.js')
-    script(src='/javascripts/compiled/templates.js')
-    script(src='/javascripts/vendor/jquery.showhtml.js')
-
+    script(src='/javascripts/compiled/bundle.js')
     script var _gaq = _gaq || []; _gaq.push(['_setAccount', '#{ga_tracking_code}']); _gaq.push(['_trackPageview']); (function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
