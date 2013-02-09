@@ -1,3 +1,5 @@
+contentTemplate = require('../../compiled/templates').content
+
 #
 # Fetch page content and insert it into the DOM
 #
@@ -9,6 +11,6 @@ loadPageContent = (newURL, pageChange) ->
       History.pushState pageSlug, document.title.replace(/^(.*)\|.*$/, "$1 | ") + data.title, "/" + newURL
 
     $("body").attr "class", pageSlug
-    $("#content-wrapper").showHtml ich.content data, animation_speed
+    $("#content-wrapper").showHtml contentTemplate(data), 700
 
 module.exports = loadPageContent

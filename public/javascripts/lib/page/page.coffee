@@ -1,8 +1,8 @@
-cleanURL = require('../helpers').cleanURL
-navigationBit = require
-
-animation_speed = 700
-animation_delay = 300
+helpers = require('../helpers')
+cleanURL = helpers.cleanURL
+loadPageContent = helpers.loadPageContent
+buildNavigation = helpers.buildNavigation
+changePage = helpers.changePage
 
 #
 # document.ready
@@ -14,7 +14,7 @@ $ ->
   #
   # Fade in content
   #
-  $(".container").hide().delay(animation_delay).fadeIn animation_speed
+  $(".container").hide().delay(300).fadeIn 700
 
   # Swap out page content
   $(document).on "click", "#primary-navigation li a, .logo a", (e) ->

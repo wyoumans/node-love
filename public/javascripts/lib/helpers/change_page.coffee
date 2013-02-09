@@ -1,3 +1,5 @@
+loadPageContent = require './load_page_content'
+
 #
 # Load new content and display it
 #
