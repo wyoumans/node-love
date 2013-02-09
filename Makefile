@@ -2,8 +2,8 @@ coffee     := ./node_modules/.bin/coffee
 browserify := ./node_modules/.bin/browserify
 
 build:
-	#@$(coffee) -o public/javascripts/compiled -c public/javascripts/coffee
-	@$(browserify) -e public/javascripts/coffee/browserify.coffee -o ./public/javascripts/compiled/bundle.js
+	#@$(coffee) -o public/javascripts/compiled -c public/javascripts/lib
+	@$(browserify) -e public/javascripts/lib/index.coffee -o ./public/javascripts/compiled/bundle.js
 
 run:
 	@make build

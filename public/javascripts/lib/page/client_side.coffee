@@ -1,3 +1,5 @@
+cleanURL = require('../helpers').cleanURL
+
 animation_speed = 700
 animation_delay = 300
 
@@ -51,9 +53,3 @@ buildNavigation = () ->
     while i < data.length
       $("#primary-navigation ul").append ich.navitem data[i]
       i++
-
-#
-# Trims string of slashes and such
-#
-cleanURL = (uncleanURL) ->
-  uncleanURL.replace /^\/|\/$/g, ""
