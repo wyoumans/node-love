@@ -1,3 +1,6 @@
-require('../vendor/plugins')
-require('./page')
-require('./helpers')
+
+# 3rd party plugins
+require '../vendor/plugins'
+
+# Client-side scripts
+require './page'

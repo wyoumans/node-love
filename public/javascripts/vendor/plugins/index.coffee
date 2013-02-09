@@ -1,3 +1,3 @@
 module.exports =
-  showhtml: require('./jquery.showhtml')
-  history: require('./history')
+  showhtml: require './jquery.showhtml'
+  history: require './history'
