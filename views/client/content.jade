@@ -1,0 +1,14 @@
+if showHero
+  .row.hero
+    .sixteen.column
+      .title-wrapper
+        h1= title
+else
+  .row.sixteen.columns
+    h1= title
+  .row!= top
+
+.row.callout.text-center.sixteen.columns
+  p= callout
+
+.row!= bottom
