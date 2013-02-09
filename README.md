@@ -27,6 +27,7 @@ A Node.js boilerplate including:
 - Write tests with Zombie or Phantom
 - Include Ember.js or Backbone.js for client side code
 - User Browserify for client-side scripts
+- Implement retina images
 
 ## Fonts
 
