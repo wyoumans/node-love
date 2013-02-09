@@ -2,9 +2,10 @@ coffee := ./node_modules/.bin/coffee
 
 build:
 	@$(coffee) -o public/javascripts/compiled -c public/javascripts/coffee
+	@$(coffee) templatizer.coffee
 
 run:
-	@$(coffee) -o public/javascripts/compiled -c public/javascripts/coffee
+	@make build
 	@node server
 
 test:
