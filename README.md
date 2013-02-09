@@ -9,6 +9,8 @@ A Node.js boilerplate including:
 - [Less](http://lesscss.org/)
 - [Skeleton](http://www.getskeleton.com/)
 - [MongoDB](http://www.mongodb.org/)
+- [Browserify](https://github.com/substack/node-browserify)
+- [Templatizer](https://github.com/HenrikJoreteg/templatizer)
 
 
 ## Getting Started

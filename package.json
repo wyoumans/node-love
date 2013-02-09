@@ -20,14 +20,15 @@
     "mongoskin": "~0.4.0",
     "jade": "~0.27.0",
     "less-middleware": "~0.1.0",
-    "templatizer": "latest"
-    "browserify": "latest"
+    "templatizer": "~0.0.8",
+    "browserify": "~1.17.3"
   },
   "engines": {
     "node": "0.8.x",
     "npm": "1.1.x"
   },
   "devDependencies": {
+    "mocha": "~1.8.1",
     "zombie": "1.4.x",
     "should": "1.2.x"
   }
