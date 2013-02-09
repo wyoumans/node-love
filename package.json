@@ -19,7 +19,8 @@
     "coffee-script": "1.4.x",
     "mongoskin": "0.4.x",
     "jade": "0.27.x",
-    "less-middleware": "0.1.x"
+    "less-middleware": "0.1.x",
+    "browserify": "latest"
   },
   "engines": {
     "node": "0.8.x",
