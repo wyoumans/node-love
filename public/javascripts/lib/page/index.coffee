@@ -1,2 +1,2 @@
 module.exports =
-  clientSide: require('./client_side')
+  clientSide: require './client_side'

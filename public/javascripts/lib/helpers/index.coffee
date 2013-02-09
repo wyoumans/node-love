@@ -1,2 +1,2 @@
 module.exports =
-  cleanURL: require('./clean_url')
+  cleanURL: require './clean_url'
