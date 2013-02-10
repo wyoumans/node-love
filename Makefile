@@ -1,16 +1,15 @@
-coffee     := ./node_modules/.bin/coffee
 browserify := ./node_modules/.bin/browserify
 mocha      := ./node_modules/.bin/mocha
 
 build:
 	@echo
-	@$(coffee) templatizer.coffee
-	@$(browserify) -e public/javascripts/lib/index.coffee -o ./public/javascripts/compiled/bundle.js
+	@node templatizer.js
+	@$(browserify) -e public/javascripts/lib/index.js -o ./public/javascripts/compiled/bundle.js
 
 run:
 	@make build
 	@echo
-	@$(coffee) app
+	@node server
 
 test:
 	@echo
