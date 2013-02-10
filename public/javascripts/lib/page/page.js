@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var helpers = require('../helpers'),
   cleanURL = helpers.cleanURL,

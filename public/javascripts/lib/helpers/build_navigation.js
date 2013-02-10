@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var navigationBitTemplate = require('../../compiled/templates').navigation_bit;
 

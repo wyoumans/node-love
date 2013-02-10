@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var contentTemplate = require('../../compiled/templates').content;
 

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var loadPageContent = require('./load_page_content');
 
