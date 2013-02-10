@@ -558,7 +558,7 @@ function loadPageContent(newURL, pageChange, cb) {
   function() {}
 
   var pageSlug = (newURL === '' ? 'index' : newURL);
-  $.get('/pages/' + pageSlug, function(data) {
+  $.get('/api/' + pageSlug, function(data) {
     if(pageChange) {
       History.pushState(pageSlug, document.title.replace(/^(.*)\|.*$/, '$1 | ') + data.title, '/' + newURL);
     }
@@ -668,7 +668,7 @@ function buildNavigation(cb) {
   cb = cb ||
   function() {}
 
-  $.get("/navigation", function(data) {
+  $.get("/api/navigation", function(data) {
     var i = 0;
     while(i < data.length) {
       $("#primary-navigation ul").append(navigationBitTemplate(data[i]));

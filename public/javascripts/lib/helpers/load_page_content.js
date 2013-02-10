@@ -14,7 +14,7 @@ function loadPageContent(newURL, pageChange, cb) {
   function() {}
 
   var pageSlug = (newURL === '' ? 'index' : newURL);
-  $.get('/pages/' + pageSlug, function(data) {
+  $.get('/api/' + pageSlug, function(data) {
     if(pageChange) {
       History.pushState(pageSlug, document.title.replace(/^(.*)\|.*$/, '$1 | ') + data.title, '/' + newURL);
     }
