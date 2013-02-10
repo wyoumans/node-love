@@ -3,8 +3,8 @@
   "version": "0.0.2",
   "private": true,
   "author": "William Youmans <will@williamyoumans.com> (http://www.williamyoumans.com/)",
-  "description": "Responsive Node.js, Express, CoffeeScript, Jade, Less, Skeleton, MongoDB Boilerplate",
-  "keywords": "Responsive, Node.js, Express, CoffeeScript, Jade, Less, Skeleton, MongoDB, Boilerplate",
+  "description": "Responsive Node.js, Express, Jade, Less, Skeleton, MongoDB Boilerplate",
+  "keywords": "Responsive, Node.js, Express, Jade, Less, Skeleton, MongoDB, Boilerplate",
   "homepage": "http://www.nodelove.com/",
   "repository": {
     "type": "git",
@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "express": "~3.0.0",
-    "coffee-script": "~1.4.0",
     "mongoskin": "~0.4.0",
     "jade": "~0.27.0",
     "less-middleware": "~0.1.0"
