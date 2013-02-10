@@ -15,6 +15,7 @@ function loadPageContent(slug, cb) {
   var pageSlug = (slug === '' ? 'index' : slug);
   $.get('/api/' + pageSlug, function(data) {
     $('body').attr('class', pageSlug);
+    document.title = document.title.replace(/^(.*)\|.*$/, '$1 | ') + data.title;
     $('#content-wrapper').showHtml(contentTemplate(data), 700);
     cb();
   });
