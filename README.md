@@ -4,7 +4,6 @@ A Node.js boilerplate including:
 
 - [Node.js](http://nodejs.org/)
 - [Express](http://expressjs.com/)
-- [CoffeeScript](http://coffeescript.org/)
 - [Jade](http://jade-lang.com/)
 - [Less](http://lesscss.org/)
 - [Skeleton](http://www.getskeleton.com/)
