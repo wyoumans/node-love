@@ -507,7 +507,7 @@ var helpers = require('../helpers'),
 $(function() {
   $('.container').hide().delay(300);
 
-  loadPageContent(cleanURL(window.location.pathname), false, buildNavigation(function() {
+  loadPageContent(cleanURL(window.location.pathname), buildNavigation(function() {
     $('.container').fadeIn(700);
   }));
 
@@ -515,8 +515,19 @@ $(function() {
   $(document).on('click', '#primary-navigation li a, .logo a', function(e) {
     if(!$(this).hasClass('external')) {
       e.preventDefault();
-      changePage(cleanURL($(this).attr('href')));
+      var slug = cleanURL($(this).attr('href'));
+      changePage(slug);
     }
+  });
+
+  History.Adapter.bind(window, "statechange", function() {
+
+    var slug = cleanURL(window.location.pathname);
+    loadPageContent(slug, function(){
+      if (typeof _gaq !== "undefined") {
+        _gaq.push(["_trackPageview", slug + "/"]);
+      }
+    });
   });
 });
 });
@@ -548,20 +559,16 @@ var contentTemplate = require('../../compiled/templates').content;
 
 /**
  * Fetch page content and insert it into the DOM
- * @param  String    newURL     new url
- * @param  Boolean   pageChange does this include a page change?
+ * @param  String    slug     new url
  * @param  Function  cb         Callback
  */
 
-function loadPageContent(newURL, pageChange, cb) {
+function loadPageContent(slug, cb) {
   cb = cb ||
   function() {}
 
-  var pageSlug = (newURL === '' ? 'index' : newURL);
-  $.get('/pages/' + pageSlug, function(data) {
-    if(pageChange) {
-      History.pushState(pageSlug, document.title.replace(/^(.*)\|.*$/, '$1 | ') + data.title, '/' + newURL);
-    }
+  var pageSlug = (slug === '' ? 'index' : slug);
+  $.get('/api/' + pageSlug, function(data) {
     $('body').attr('class', pageSlug);
     $('#content-wrapper').showHtml(contentTemplate(data), 700);
     cb();
@@ -668,7 +675,7 @@ function buildNavigation(cb) {
   cb = cb ||
   function() {}
 
-  $.get("/navigation", function(data) {
+  $.get("/api/navigation", function(data) {
     var i = 0;
     while(i < data.length) {
       $("#primary-navigation ul").append(navigationBitTemplate(data[i]));
@@ -683,21 +690,19 @@ module.exports = buildNavigation;
 
 require.define("/lib/helpers/change_page.js",function(require,module,exports,__dirname,__filename,process,global){'use strict';
 
-var loadPageContent = require('./load_page_content');
+var loadPageContent = require('./load_page_content'),
+    cleanURL = require('./clean_url');
 
 /**
  * Load new content and display it
- * @param String newURL      new url
+ * @param String slug      new slug
  */
-function changePage(newURL) {
-  if ($("body").attr("class") === newURL) {
+function changePage(slug) {
+  console.log('Changepage: ' + slug);
+  if ($("body").attr("class") === slug) {
     return;
   }
-  loadPageContent(newURL, true, function(){
-    if (typeof _gaq !== "undefined") {
-      _gaq.push(["_trackPageview", newURL + "/"]);
-    }
-  });
+  History.pushState(slug, document.title, '/' + slug);
 };
 
 module.exports = changePage;
