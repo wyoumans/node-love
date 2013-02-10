@@ -20,7 +20,8 @@ $(function() {
   $(document).on('click', '#primary-navigation li a, .logo a', function(e) {
     if(!$(this).hasClass('external')) {
       e.preventDefault();
-      changePage();
+      var slug = cleanURL($(this).attr('href'));
+      changePage(slug);
     }
   });
 

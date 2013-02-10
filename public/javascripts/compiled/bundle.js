@@ -515,7 +515,8 @@ $(function() {
   $(document).on('click', '#primary-navigation li a, .logo a', function(e) {
     if(!$(this).hasClass('external')) {
       e.preventDefault();
-      changePage();
+      var slug = cleanURL($(this).attr('href'));
+      changePage(slug);
     }
   });
 
@@ -694,9 +695,10 @@ var loadPageContent = require('./load_page_content'),
 
 /**
  * Load new content and display it
+ * @param String slug      new slug
  */
-function changePage() {
-  var slug = cleanURL(window.location.pathname);
+function changePage(slug) {
+  console.log('Changepage: ' + slug);
   if ($("body").attr("class") === slug) {
     return;
   }
