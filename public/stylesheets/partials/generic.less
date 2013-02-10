@@ -4,69 +4,88 @@ body {
   background: transparent url(/images/template/grid-18px-masked.png) repeat-x 0 0;
   border-top: 5px solid red;
 }
+
 h1, h2, h3, h4, h5, h6, .logo , .callout{
   font-family: @header-family;
   font-weight: normal;
 }
+
 a {
+
   &, &:visited {
     color: #000;
   }
+
   &:hover, &:active {
     color: #F00;
   }
 }
+
 .pull-right {
   float: right !important;
 }
+
 .pull-left {
   float: left !important;
 }
+
 .text-right {
   text-align: right !important;
 }
+
 .text-left {
   text-align: left !important;
 }
+
 .text-center {
   text-align: center;
 }
+
 .container {
   margin-top: 40px;
 }
+
 nav ul li {
   .inline-block();
   margin: 0 0 0 20px;
   font-size: 14px;
+
   &.download a {
     display: block;
     background-color: #F00;
     .border-radius(5px);
     padding: 3px 10px 3px 5px;
     font-weight: bold;
+
     &, &:active, &:visited {
       color: #FFF;
     }
+
     &:hover {
       color: #FFF;
       background-color: #BF3030;
     }
+
     i {
       font-size: 18px;
       .inline-block();
-      margin: 3px 5px 0 0;
+      margin: 0 5px 0 0;
       vertical-align: middle;
     }
   }
 }
+
 header {
+
   .logo {
     font-size: 40px;
+
     i {
       font-size: 20px;
       margin: 0 15px 0 0;
       color: red;
     }
+
     .superscript {
       .inline-block();
       color: #AAA;
@@ -75,42 +94,51 @@ header {
       vertical-align: top;
     }
   }
+
   a {
     text-decoration: none;
   }
 }
+
 h1 {
   font-size: 28px;
   line-height: 40px;
   margin-bottom: 10px;
 }
+
 h2 {
   font-size: 21px;
   line-height: 34px;
   margin-bottom: 8px;
 }
+
 h3 {
   font-size: 17px;
   line-height: 30px;
   margin-bottom: 4px;
 }
+
 h4 {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 1px;
 }
+
 h5 {
   font-size: 13px;
   line-height: 21px;
 }
+
 h6 {
   font-size: 12px;
   line-height: 18px;
 }
+
 .callout {
   font-size: 180%;
   line-height: normal;
 }
+
 .hero {
   position: relative;
   background: transparent url(/images/template/hero.jpg) center center no-repeat;
@@ -128,6 +156,7 @@ h6 {
     bottom: 10px;
     right: 10px;
     width: 200px;
+
     h1 {
       color: #000000;
     }
