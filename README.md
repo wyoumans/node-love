@@ -22,6 +22,10 @@ A Node.js boilerplate including:
 
 - To enable GA tracking, set an environmental variable `GA_TRACKING_CODE` with your tracking code.
 
+## Todos
+
+- Ensure initial fade in occurs after content is loaded
+
 ## Roadmap
 
 - Write tests with Zombie.js
