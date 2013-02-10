@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   cleanURL: require('./clean_url'),
   loadPageContent: require('./load_page_content'),
