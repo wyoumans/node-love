@@ -1,20 +1,17 @@
 'use strict';
 
-var loadPageContent = require('./load_page_content');
+var loadPageContent = require('./load_page_content'),
+    cleanURL = require('./clean_url');
 
 /**
  * Load new content and display it
- * @param String newURL      new url
  */
-function changePage(newURL) {
-  if ($("body").attr("class") === newURL) {
+function changePage() {
+  var slug = cleanURL(window.location.pathname);
+  if ($("body").attr("class") === slug) {
     return;
   }
-  loadPageContent(newURL, true, function(){
-    if (typeof _gaq !== "undefined") {
-      _gaq.push(["_trackPageview", newURL + "/"]);
-    }
-  });
+  History.pushState(slug, document.title, '/' + slug);
 };
 
 module.exports = changePage;
