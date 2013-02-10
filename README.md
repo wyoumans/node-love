@@ -24,8 +24,8 @@ A Node.js boilerplate including:
 
 ## Roadmap
 
-- Write tests with Zombie or Phantom
-- Include Ember.js or Backbone.js for client side code
+- Write tests with Zombie.js
+- Include Backbone.js for client side code
 - Implement retina images
 
 ## Fonts
