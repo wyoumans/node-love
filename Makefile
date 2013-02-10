@@ -4,7 +4,7 @@ mocha      := ./node_modules/.bin/mocha
 build:
 	@echo
 	@node templatizer.js
-	@$(browserify) -e public/javascripts/lib/index.coffee -o ./public/javascripts/compiled/bundle.js
+	@$(browserify) -e public/javascripts/lib/index.js -o ./public/javascripts/compiled/bundle.js
 
 run:
 	@make build
