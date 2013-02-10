@@ -3,7 +3,7 @@
 var express = require('express'),
   path = require('path'),
   http = require('http'),
-  page = require('./routes/pages'),
+  api = require('./routes/api'),
   app = express();
 
 app.configure(function() {
@@ -40,10 +40,10 @@ app.locals({
 /*
  * Routes
  */
-app.get('/pages', page.findAll);
-app.get('/navigation', page.findAllNavigation);
-app.get('/pages/:id', page.findByAttribute);
-app.get(/^[^\.]*$/g, page.layout);
+app.get('/api', api.findAll);
+app.get('/api/navigation', api.findAllNavigation);
+app.get('/api/:id', api.findByAttribute);
+app.get(/^[^\.]*$/g, api.layout);
 
 /*
  * Web server initialization

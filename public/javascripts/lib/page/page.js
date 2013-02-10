@@ -12,7 +12,7 @@ var helpers = require('../helpers'),
 $(function() {
   $('.container').hide().delay(300);
 
-  loadPageContent(cleanURL(window.location.pathname), false, buildNavigation(function() {
+  loadPageContent(cleanURL(window.location.pathname), buildNavigation(function() {
     $('.container').fadeIn(700);
   }));
 
@@ -20,7 +20,18 @@ $(function() {
   $(document).on('click', '#primary-navigation li a, .logo a', function(e) {
     if(!$(this).hasClass('external')) {
       e.preventDefault();
-      changePage(cleanURL($(this).attr('href')));
+      var slug = cleanURL($(this).attr('href'));
+      changePage(slug);
     }
+  });
+
+  History.Adapter.bind(window, "statechange", function() {
+
+    var slug = cleanURL(window.location.pathname);
+    loadPageContent(slug, function(){
+      if (typeof _gaq !== "undefined") {
+        _gaq.push(["_trackPageview", slug + "/"]);
+      }
+    });
   });
 });
