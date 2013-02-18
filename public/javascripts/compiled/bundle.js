@@ -699,7 +699,6 @@ var loadPageContent = require('./load_page_content'),
  * @param String slug      new slug
  */
 function changePage(slug) {
-  console.log('Changepage: ' + slug);
   if ($("body").attr("class") === slug) {
     return;
   }
