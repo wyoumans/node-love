@@ -8,7 +8,7 @@ var mongo = require('mongoskin'),
 /*
  * DB stuff
  */
-if(process.env.MONGOHQ_URL) {
+if (process.env.MONGOHQ_URL) {
   connectionString = process.env.MONGOHQ_URL;
 }
 
@@ -17,10 +17,10 @@ var db = mongo.db(connectionString + '?auto_reconnect', {
 });
 
 db.open(function(err, db) {
-  if(!err) {
+  if (!err) {
     console.log('Connected to \'nodelove\' database');
     db.collection(collectionName).find().toArray(function(err, items) {
-      if(!items.length) {
+      if (!items.length) {
         populateDB();
       }
     });
@@ -32,7 +32,7 @@ exports.findByAttribute = function(req, res) {
     lookup = {};
   try {
     lookup['_id'] = new BSON.ObjectID(id);
-  } catch(err) {
+  } catch (err) {
     lookup['slug'] = id;
   }
   db.collection(collectionName).findOne(lookup, function(err, item) {
@@ -111,7 +111,7 @@ function populateDB() {
   db.collection(collectionName).insert(pages, {
     safe: true
   }, function(err, result) {
-    if(err) {
+    if (err) {
       console.log('A DB error has occurred');
     } else {
       console.log('The DB had been populated!');
@@ -120,12 +120,12 @@ function populateDB() {
 };
 
 function checkDBValue(res, obj, err) {
-  if(err) {
+  if (err) {
     res.send({
       error: 'A DB error has occurred'
     });
   }
-  if(obj) {
+  if (obj) {
     res.send(obj);
   } else {
     res.send(404);

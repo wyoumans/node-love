@@ -3,6 +3,7 @@
 /*
  * Trims string of slashes and such
  */
+
 function cleanURL(uncleanURL) {
   return uncleanURL.replace(/^\/|\/$/g, '');
 };

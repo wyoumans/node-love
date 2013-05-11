@@ -7,6 +7,7 @@ var loadPageContent = require('./load_page_content'),
  * Load new content and display it
  * @param String slug      new slug
  */
+
 function changePage(slug) {
   if ($("body").attr("class") === slug) {
     return;

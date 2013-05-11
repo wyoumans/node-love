@@ -9,8 +9,7 @@ var contentTemplate = require('../../compiled/templates').content;
  */
 
 function loadPageContent(slug, cb) {
-  cb = cb ||
-  function() {}
+  cb = cb || function() {}
 
   var pageSlug = (slug === '' ? 'index' : slug);
   $.get('/api/' + pageSlug, function(data) {

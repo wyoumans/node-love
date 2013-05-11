@@ -18,7 +18,7 @@ $(function() {
 
   // Swap out page content
   $(document).on('click', '#primary-navigation li a, .logo a', function(e) {
-    if(!$(this).hasClass('external')) {
+    if (!$(this).hasClass('external')) {
       e.preventDefault();
       var slug = cleanURL($(this).attr('href'));
       changePage(slug);
@@ -28,7 +28,7 @@ $(function() {
   History.Adapter.bind(window, "statechange", function() {
 
     var slug = cleanURL(window.location.pathname);
-    loadPageContent(slug, function(){
+    loadPageContent(slug, function() {
       if (typeof _gaq !== "undefined") {
         _gaq.push(["_trackPageview", slug + "/"]);
       }
