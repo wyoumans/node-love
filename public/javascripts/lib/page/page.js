@@ -1,10 +1,11 @@
 'use strict';
 
-var helpers = require('../helpers'),
-  cleanURL = helpers.cleanURL,
-  loadPageContent = helpers.loadPageContent,
-  buildNavigation = helpers.buildNavigation,
-  changePage = helpers.changePage;
+var helpers         = require('../helpers')
+  , cleanURL        = helpers.cleanURL
+  , loadPageContent = helpers.loadPageContent
+  , buildNavigation = helpers.buildNavigation
+  , changePage      = helpers.changePage
+  ;
 
 /*
  * document.ready

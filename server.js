@@ -1,10 +1,11 @@
 'use strict';
 
-var express = require('express'),
-  path = require('path'),
-  http = require('http'),
-  api = require('./routes/api'),
-  app = express();
+var express = require('express')
+  , path = require('path')
+  , http = require('http')
+  , api = require('./routes/api')
+  , app = express()
+  ;
 
 app.configure(function() {
   app.set('port', process.env.PORT || 3000);

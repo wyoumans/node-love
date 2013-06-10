@@ -1,7 +1,8 @@
 'use strict';
 
-var loadPageContent = require('./load_page_content'),
-    cleanURL = require('./clean_url');
+var loadPageContent = require('./load_page_content')
+  , cleanURL = require('./clean_url')
+  ;
 
 /**
  * Load new content and display it

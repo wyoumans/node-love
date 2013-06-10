@@ -1,9 +1,10 @@
 'use strict';
 
-var mongo = require('mongoskin'),
-  BSON = mongo.BSONPure,
-  collectionName = 'pages',
-  connectionString = 'mongodb://localhost:27017/nodelove';
+var mongo = require('mongoskin')
+  , BSON = mongo.BSONPure
+  , collectionName = 'pages'
+  , connectionString = 'mongodb://localhost:27017/nodelove'
+  ;
 
 /*
  * DB stuff
@@ -28,13 +29,15 @@ db.open(function(err, db) {
 });
 
 exports.findByAttribute = function(req, res) {
-  var id = req.params.id,
-    lookup = {};
+  var id = req.params.id
+    , lookup = {};
+
   try {
     lookup['_id'] = new BSON.ObjectID(id);
   } catch (err) {
     lookup['slug'] = id;
   }
+
   db.collection(collectionName).findOne(lookup, function(err, item) {
     checkDBValue(res, item, err);
   });
@@ -70,6 +73,7 @@ exports.layout = function(req, res) {
 
 function populateDB() {
   console.log('The \'pages\' collection doesn\'t exist. Creating it with sample data...');
+
   var pages = [{
     title: 'Node.js, Express, Jade, Less, Skeleton, MongoDB boilerplate',
     slug: 'index',
@@ -125,6 +129,7 @@ function checkDBValue(res, obj, err) {
       error: 'A DB error has occurred'
     });
   }
+
   if (obj) {
     res.send(obj);
   } else {
