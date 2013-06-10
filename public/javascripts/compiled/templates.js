@@ -7,60 +7,28 @@ var jade=function(exports){Array.isArray||(Array.isArray=function(arr){return"[o
 // create our folder objects
 
 // content.jade compiled template
-exports.content = function anonymous(locals, attrs, escape, rethrow, merge) {
-    attrs = attrs || jade.attrs;
-    escape = escape || jade.escape;
-    rethrow = rethrow || jade.rethrow;
-    merge = merge || jade.merge;
+exports.content = function anonymous(locals) {
     var buf = [];
     with (locals || {}) {
-        var interp;
-        var __indent = [];
         if (showHero) {
-            buf.push('\n<div class="row hero">\n  <div class="sixteen column">\n    <div class="title-wrapper">\n      <h1>');
-            var __val__ = title;
-            buf.push(escape(null == __val__ ? "" : __val__));
-            buf.push("</h1>\n    </div>\n  </div>\n</div>");
+            buf.push('<div class="row hero"><div class="sixteen column"><div class="title-wrapper"><h1>' + jade.escape(null == (jade.interp = title) ? "" : jade.interp) + "</h1></div></div></div>");
         } else {
-            buf.push('\n<div class="row sixteen columns">\n  <h1>');
-            var __val__ = title;
-            buf.push(escape(null == __val__ ? "" : __val__));
-            buf.push('</h1>\n</div>\n<div class="row">');
-            var __val__ = top;
-            buf.push(null == __val__ ? "" : __val__);
-            buf.push("</div>");
+            buf.push('<div class="row sixteen columns"><h1>' + jade.escape(null == (jade.interp = title) ? "" : jade.interp) + '</h1></div><div class="row">' + (null == (jade.interp = top) ? "" : jade.interp) + "</div>");
         }
-        buf.push('\n<div class="row callout text-center sixteen columns">\n  <p>');
-        var __val__ = callout;
-        buf.push(escape(null == __val__ ? "" : __val__));
-        buf.push('</p>\n</div>\n<div class="row">');
-        var __val__ = bottom;
-        buf.push(null == __val__ ? "" : __val__);
-        buf.push("</div>");
+        buf.push('<div class="row callout text-center sixteen columns"><p>' + jade.escape(null == (jade.interp = callout) ? "" : jade.interp) + '</p></div><div class="row">' + (null == (jade.interp = bottom) ? "" : jade.interp) + "</div>");
     }
     return buf.join("");
 };
 
 // navigation_bit.jade compiled template
-exports.navigation_bit = function anonymous(locals, attrs, escape, rethrow, merge) {
-    attrs = attrs || jade.attrs;
-    escape = escape || jade.escape;
-    rethrow = rethrow || jade.rethrow;
-    merge = merge || jade.merge;
+exports.navigation_bit = function anonymous(locals) {
     var buf = [];
     with (locals || {}) {
-        var interp;
-        var __indent = [];
-        buf.push("\n<li><a");
-        buf.push(attrs({
+        buf.push("<li><a" + jade.attrs({
             href: "/" + slug
         }, {
             href: true
-        }));
-        buf.push(">");
-        var __val__ = title;
-        buf.push(escape(null == __val__ ? "" : __val__));
-        buf.push("</a></li>");
+        }) + ">" + jade.escape(null == (jade.interp = title) ? "" : jade.interp) + "</a></li>");
     }
     return buf.join("");
 };
