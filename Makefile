@@ -1,5 +1,5 @@
 browserify := ./node_modules/.bin/browserify
-less       := ./node_modules/.bin/less
+less       := ./node_modules/.bin/lessc
 mocha      := ./node_modules/.bin/mocha
 
 build:
