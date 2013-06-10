@@ -24,7 +24,7 @@ A Node.js boilerplate including:
 ## Roadmap
 
 - Write tests with Zombie.js
-- Include Backbone.js for client side code
+- Use Angular.js instead of manual client side routing
 - Implement retina images
 
 ## Fonts
