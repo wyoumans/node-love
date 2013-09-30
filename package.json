@@ -8,10 +8,10 @@
   "homepage": "http://www.nodelove.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/klanoma/node-love.git"
+    "url": "https://github.com/wyoumans/node-love.git"
   },
   "bugs": {
-    "url": "https://github.com/klanoma/node-love/issues",
+    "url": "https://github.com/wyoumans/node-love/issues",
     "email": "will@williamyoumans.com"
   },
   "dependencies": {
