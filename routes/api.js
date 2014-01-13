@@ -79,7 +79,7 @@ function populateDB() {
     slug: 'index',
     top: '',
     bottom: '<div class="one-third column"><h2><i class="icon-fighter-jet"></i>Fast</h2><p>With Node Love, you can be up and running in minutes with a working, database-driven project that truly harnesses the power of Javascript on the server and in the browser. Your users won\'t know what hit them!</p></div><div class="one-third column"><h2><i class="icon-refresh"></i>Seamless</h2><p>With Node Love, the seperation between client-side and server-side is virtually eliminated. Jade templates and node modules can be used seamlessly on either side with a little help from <a href="https://github.com/substack/node-browserify" target="_blank">browserify</a> and <a href="https://github.com/HenrikJoreteg/templatizer" target="_blank">templatizer</a></p></div><div class="one-third column"><h2><i class="icon-mobile-phone"></i>Responsive</h2><p>Thanks to <a href="http://lesscss.org" target="_blank">Less</a> and <a href="http://getskeleton.com" target="_blank">Skeleton</a>, you can optomize each page for all your mobile users with ease.</p></div>',
-    callout: 'A simple, lightening fast, powerful, responsive, database driven Node.js starter template.',
+    callout: 'A simple, lightning fast, powerful, responsive, database driven Node.js starter template.',
     showHero: true,
     hidden: true,
     sort: 1
