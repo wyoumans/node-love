@@ -15,22 +15,22 @@
     "email": "will@williamyoumans.com"
   },
   "dependencies": {
-    "express": "~3.4.0",
-    "mongoskin": "~0.6.0",
-    "jade": "~0.35.0",
-    "less-middleware": "~0.1.12",
-    "less": "~1.4.0",
-    "forever": "~0.10.8",
-    "templatizer": "~0.2.3",
-    "browserify": "~2.33.0"
+    "express": "~3.4.8",
+    "mongoskin": "~0.6.1",
+    "jade": "~1.1.4",
+    "less-middleware": "~0.1.14",
+    "less": "~1.6.1",
+    "forever": "~0.10.11",
+    "templatizer": "~0.2.8",
+    "browserify": "~3.20.0"
   },
   "engines": {
     "node": "0.10.7",
     "npm": "1.2.21"
   },
   "devDependencies": {
-    "mocha": "~1.10.0",
-    "zombie": "~1.4.0",
-    "should": "~1.2.2"
+    "mocha": "~1.17.0",
+    "zombie": "~2.0.0-alpha24",
+    "should": "~2.1.1"
   }
 }
