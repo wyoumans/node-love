@@ -14,8 +14,8 @@ A Node.js boilerplate including:
 
 ## Getting Started
 
-`npm install` (ensure mongodb is installed and running)
-`make run`
+- `npm install` (ensure mongodb is installed and running)
+- `make run`
 
 ## Google Analytics
 
