@@ -14,12 +14,12 @@ A Node.js boilerplate including:
 
 ## Getting Started
 
-- `npm install` (ensure mongodb is installed and running)
-- `make run`
+`npm install` (ensure mongodb is installed and running)
+`make run`
 
 ## Google Analytics
 
-- To enable GA tracking, set an environmental variable `GA_TRACKING_CODE` with your tracking code.
+To enable GA tracking, set an environmental variable `GA_TRACKING_CODE` with your tracking code.
 
 ## Roadmap
 
@@ -29,8 +29,10 @@ A Node.js boilerplate including:
 
 ## Fonts
 
-- I am using [Font Awesome More](https://github.com/gregoryloucas/Font-Awesome-More) and [Gandhi Sans](http://www.fontsquirrel.com/fonts/gandhi-sans).
+I am using [Font Awesome More](https://github.com/gregoryloucas/Font-Awesome-More) and [Gandhi Sans](http://www.fontsquirrel.com/fonts/gandhi-sans).
 
 ## License
 
-- Node Love is released under the MIT open source license. Please let me know if you find this useful and you want to be showcased on nodelove.com.
+[MIT License](http://wy.mit-license.org/)  Copyright © 2012-2014 William Youmans
+
+Please let me know if you find this little project useful and you can be showcased on nodelove.com.
