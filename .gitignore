@@ -1,0 +1,29 @@
+# Mac Ignores
+:2e*
+._*
+*~
+.AppleDouble*
+.DS_*
+-.save
+.com.apple.timemachine*
+
+# Node ignores
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+pids
+logs
+results
+npm-debug.log
+
+# Other
+/node_modules
+
+# Compiled Assets
+public/stylesheets/*.css
+public/javascripts/compiled/*.js
