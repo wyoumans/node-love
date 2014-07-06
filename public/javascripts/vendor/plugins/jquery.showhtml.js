@@ -1,4 +1,4 @@
-/*
+/**
  * Animates the dimensional changes resulting from altering element contents
  * Usage examples:
  *    $("#myElement").showHtml("new HTML contents");
@@ -15,7 +15,10 @@
 
       el.html(html);
 
-      var next = { width: el.width() + 'px', height: el.height() + 'px' };
+      var next = {
+        width: el.width() + 'px',
+        height: el.height() + 'px'
+      };
 
       el.css(cur).animate(next, speed, function() {
         el.css(finish);

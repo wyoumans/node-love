@@ -7,7 +7,6 @@ var contentTemplate = require('../../compiled/templates').content;
  * @param  String    slug     new url
  * @param  Function  cb         Callback
  */
-
 function loadPageContent(slug, cb) {
   cb = cb || function() {}
 
