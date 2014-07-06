@@ -21,11 +21,13 @@ html
 
     script(src='/javascripts/vendor/modernizr.js')
 
-    //if IE
-      link(href='stylesheets/ie.css', media='screen, projection', rel='/stylesheet', type='text/css')
+    <!--[if IE]>
+    link(href='stylesheets/ie.css', media='screen, projection', rel='/stylesheet', type='text/css')
+    <![endif]-->
 
-    //if lt IE 9
-      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    <!--[if lt IE 9]>
+    script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    <![endif]-->
 
   body(class=slug)
     .container
@@ -45,8 +47,7 @@ html
       section#content-wrapper
 
       footer.row.sixteen.columns.pull-right.text-right
-        p
-          &copy; #{new Date().getFullYear()}&nbsp;
+        p &copy; #{new Date().getFullYear()}&nbsp;
           a(href="http://www.williamyoumans.com", target="_blank") William Youmans
 
     script(src='/javascripts/vendor/jquery-1.8.3.min.js')

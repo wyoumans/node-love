@@ -3,6 +3,7 @@
 var express = require('express')
   , path = require('path')
   , http = require('http')
+  , lessMiddleware = require('less-middleware')
   , api = require('./routes/api')
   , app = express()
   ;
@@ -18,10 +19,10 @@ app.configure(function() {
   app.use(express.cookieParser('f6cfcf4dabfeb866731392f11da591fc'));
   app.use(express.session());
   app.use(app.router);
-  app.use(require('less-middleware')({
-    src: __dirname + '/public'
+  app.use(lessMiddleware(path.join(__dirname, '/public')));
+  app.use(express.static(path.join(__dirname, 'public'), {
+    redirect: false
   }));
-  app.use(express["static"](path.join(__dirname, 'public')));
   app.use(function(err, req, res, next) {
     res.render('500', {
       error: err,
