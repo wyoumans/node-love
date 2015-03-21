@@ -15,13 +15,14 @@
     "email": "will@williamyoumans.com"
   },
   "dependencies": {
-    "browserify": "^4.2.3",
+    "browserify": "^9.0.3",
     "express": "~3.4.8",
     "jade": "~1.3.1",
-    "less": "^1.7.5",
-    "less-middleware": "^1.0.4",
-    "mongoskin": "^0.6.1",
-    "templatizer": "^0.3.6"
+    "less": "^2.4.0",
+    "less-middleware": "^2.0.1",
+    "mongodb": "^1.4.35",
+    "mongoskin": "^1.4.12",
+    "templatizer": "^1.2.1"
   },
   "engines": {
     "node": "0.10.36",
