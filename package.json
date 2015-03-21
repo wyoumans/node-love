@@ -1,6 +1,6 @@
 {
   "name": "node-love",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": true,
   "author": "William Youmans <will@williamyoumans.com> (http://www.williamyoumans.com/)",
   "description": "Responsive Node.js, Express, Jade, Less, Skeleton, MongoDB Boilerplate",
@@ -24,12 +24,12 @@
     "templatizer": "~0.3.5"
   },
   "engines": {
-    "node": "0.10.7",
-    "npm": "1.2.21"
+    "node": "0.10.36",
+    "npm": "1.4.28"
   },
   "devDependencies": {
-    "mocha": "~1.17.0",
-    "zombie": "~2.0.0-alpha24",
-    "should": "~2.1.1"
+    "mocha": "^2.2.1",
+    "should": "^5.2.0",
+    "zombie": "^3.1.0"
   }
 }
