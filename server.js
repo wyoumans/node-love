@@ -1,43 +1,46 @@
 'use strict';
 
-var express = require('express')
-  , path = require('path')
-  , http = require('http')
+var express        = require('express')
+  , path           = require('path')
+  , http           = require('http')
+  , favicon        = require('serve-favicon')
+  , bodyParser     = require('body-parser')
+  , methodOverride = require('method-override')
   , lessMiddleware = require('less-middleware')
-  , api = require('./routes/api')
-  , app = express()
+  , api            = require('./routes/api')
+  , app            = express()
   ;
 
-app.configure(function() {
-  app.set('port', process.env.PORT || 4444);
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
+app.enable('trust proxy');
 
-  app.use(express.logger('dev'));
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(express.cookieParser('f6cfcf4dabfeb866731392f11da591fc'));
-  app.use(express.session());
-  app.use(app.router);
-  app.use(lessMiddleware(path.join(__dirname, '/public')));
-  app.use(express.static(path.join(__dirname, 'public'), {
-    redirect: false
-  }));
-  app.use(function(err, req, res, next) {
-    res.render('500', {
-      error: err,
-      status: 500
-    });
+// locals
+app.locals.site_name = 'Node Love';
+app.locals.ga_tracking_code = process.env.GA_TRACKING_CODE || 'UA-XXXXXXXXXX-XX';
+
+app.set('port', process.env.PORT || 4444);
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+app.use(favicon(__dirname + '/public/favicon.ico'));
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(bodyParser.json());
+
+app.use(methodOverride());
+
+app.use(express.static(path.join(__dirname, 'public'), {
+  redirect: false
+}));
+
+app.use(function(err, req, res, next) {
+  res.render('500', {
+    error: err,
+    status: 500
   });
-});
-
-app.configure('development', function() {
-  app.use(express.errorHandler());
-});
-
-app.locals({
-  site_name: 'Node Love',
-  ga_tracking_code: process.env.GA_TRACKING_CODE || 'UA-XXXXXXXXXX-XX'
 });
 
 /*
